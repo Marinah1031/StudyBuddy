@@ -1,17 +1,21 @@
 // Deck Model
 const mongoose = require('mongoose');
-
+const { Schema } = mongoose;
 const deckSchema = new mongoose.Schema({
   deckName: {
     type: String,
     required: true,
   },
+  cards: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Card',
+  },
+],
   description: {
     type: String,
     default: '',
   },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  flashcards: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Cards' }],
+  Card: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Card' }],
 });
 
 deckSchema.virtual('cardCount').get(function () {
@@ -26,6 +30,6 @@ const Deck = mongoose.model('Deck', deckSchema);
 module.exports = Deck;
 
 
-//const cardCount = myDeck.cardCount;
-//console.log(`The deck "${myDeck.name}" contains ${cardCount} cards.`);
+// const cardCount = myDeck.cardCount;
+// console.log(`The deck "${myDeck.name}" contains ${cardCount} cards.`);
 

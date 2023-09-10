@@ -1,17 +1,26 @@
 [
   {
-    "name": "UseEffect University",
-    "location": "Downtown",
-    "studentCount": 6000
+    "username": "Jelly",
+    "email": "jelly@gmail.com",
+    "password": "12345",
+    "decks": []
   },
   {
-    "name": "Component College",
-    "location": "Art District",
-    "studentCount": 8000
+    "username": "Cherry",
+    "email": "cherry@gmail.com",
+    "password": "abcde",
+    "decks": []
   },
   {
-    "name": "JSX Technical School",
-    "location": "React Park",
-    "studentCount": 5000
+    "username": "peanut",
+    "email": "peanut@gmail.com",
+    "password": "0000",
+    "decks": []
+  },
+  {
+    "username": "tomato",
+    "email": "tomato@gmail.com",
+    "password": "12121",
+    "decks": []
   }
 ]

@@ -1,32 +1,32 @@
 [
   {
-    "name": "Alberto Harrison",
-    "studentScore": 7.6,
-    "officeHours": "10:00 AM",
-    "officeLocation": "HH3"
+    "deckName": "Alberto Harrison",
+    "cards": [],
+    "description": "FullStack developing definitions"
   },
   {
-    "name": "Peyton Olson",
-    "studentScore": 9.0,
-    "officeHours": "10:30 AM",
-    "officeLocation": "JH2"
+    "deckName": "Abigail Adams",
+    "cards": [],
+    "description": "Geometry"
   },
   {
-    "name": "Virgil Parker",
-    "studentScore": 8.1,
-    "officeHours": "1:00 PM",
-    "officeLocation": "LIB1"
+    "deckName": "Superman",
+    "cards": [],
+    "description": "Periodic Table Elements"
   },
   {
-    "name": "Rebecca Watts",
-    "studentScore": 8.8,
-    "officeHours": "4:00 PM",
-    "officeLocation": "LIB2"
+    "deckName": "Spiderman",
+    "cards": [],
+    "description": "Arachnids"
   },
   {
-    "name": "Colleen Moore",
-    "studentScore": 7.8,
-    "officeHours": "4:30 PM",
-    "officeLocation": "KS3"
+    "deckName": "Little Red Riding Hood",
+    "cards": [],
+    "description": "Foreging in forests"
+  },
+  {
+    "deckName": "George Washington",
+    "cards": [],
+    "description": "U.S.A States and capitals"
   }
 ]
