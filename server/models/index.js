@@ -1,5 +1,5 @@
-const School = require('./School');
-const Class = require('./Class');
-const Professor = require('./Professor');
+const Card = require('./Card');
+const Deck = require('./Deck');
+const User = require('./User');
 
-module.exports = { School, Class, Professor };
+module.exports = { Card, Deck, User};
