@@ -21,6 +21,7 @@ const resolvers = {
 
       throw needLogin;
     },
+    allDecks: async () => Deck.find(),
   },
 
   Mutation: {
