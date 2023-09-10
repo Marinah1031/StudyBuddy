@@ -1,0 +1,26 @@
+[
+  {
+    "username": "Jelly",
+    "email": "jelly@gmail.com",
+    "password": "12345",
+    "decks": []
+  },
+  {
+    "username": "Cherry",
+    "email": "cherry@gmail.com",
+    "password": "abcde",
+    "decks": []
+  },
+  {
+    "username": "peanut",
+    "email": "peanut@gmail.com",
+    "password": "0000",
+    "decks": []
+  },
+  {
+    "username": "tomato",
+    "email": "tomato@gmail.com",
+    "password": "12121",
+    "decks": []
+  }
+]
