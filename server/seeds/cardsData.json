@@ -1,0 +1,38 @@
+[
+  {
+    "term": "Full Stack Developer",
+    "definition": "An engineer who can handle all the work of databases, servers, systems engineering, and clients. Depending on the project, what customers need may be a mobile stack, a Web stack, or a native application stack."
+  },
+  {
+    "term": "Express.js",
+    "definition": "A web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js."
+  },
+  {
+    "term": "Node.js",
+    "definition": "An open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser."
+  },
+  {
+    "term": "NPM",
+    "definition": "A package manager for JavaScript. It is the default package manager for the JavaScript runtime environment Node.js. It consists of a command line client, also called npm, and an online database of public and paid-for private packages, called the npm registry."
+  },
+  {
+    "term": "Sequelize",
+    "definition": "Sequelize is a promise-based ORM for Node.js v4 and up. It supports the dialects PostgreSQL, MySQL, SQLite and MSSQL and features solid transaction support, relations, read replication and more."
+  },
+  {
+    "term": "Git",
+    "definition": "A distributed version control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows."
+  },
+  {
+    "term": "AngularJS",
+    "definition": "A JavaScript-based open-source front-end web application framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications"
+  },
+  {
+    "term": "React",
+    "definition": "A JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications."
+  },
+  {
+    "term": "Redux",
+    "definition": "Redux is an open-source JavaScript library for managing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Similar to Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark."
+  }
+]
