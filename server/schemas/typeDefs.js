@@ -11,6 +11,7 @@ const typeDefs = gql`
   type Deck {
     _id: ID
     title: String!
+    description: String
     cards: [Card]
   }
 
