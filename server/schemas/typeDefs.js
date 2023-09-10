@@ -10,7 +10,7 @@ const typeDefs = gql`
 
   type Deck {
     _id: ID
-    title: String!
+    deckName: String!
     description: String
     cards: [Card]
   }
@@ -30,7 +30,6 @@ const typeDefs = gql`
     me: User
     allDecks: [Deck]
     viewCard(_id: ID!): Card
-    devDecks
   }
 
   type Mutation {
