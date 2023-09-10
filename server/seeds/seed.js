@@ -7,31 +7,32 @@ const userData = require('./userData.json');
 
 db.once('open', async () => {
   // clean database
+  try {
   await Card.deleteMany({});
   await Deck.deleteMany({});
   await User.deleteMany({});
 
   // bulk create each model
-  const card = await Card.insertMany(cardsData);
-  const deck = await Deck.insertMany(deckData);
-  const user = await User.insertMany(userData);
-
-  // for (newClass of classes) {
-  //   // randomly add each class to a school
-  //   const tempSchool = schools[Math.floor(Math.random() * schools.length)];
-  //   tempSchool.classes.push(newClass._id);
-  //   await tempSchool.save();
-
-  //   // randomly add a professor to each class
-  //   const tempProfessor = professors[Math.floor(Math.random() * professors.length)];
-  //   newClass.professor = tempProfessor._id;
-  //   await newClass.save();
-
-  //   // reference class on professor model, too
-  //   tempProfessor.classes.push(newClass._id);
-  //   await tempProfessor.save();
-  // }
-
-  console.log('all done!');
-  process.exit(0);
-});
+  await Card.insertMany(cardsData);
+  await Deck.insertMany(deckData);
+  await User.insertMany(userData);
+  
+      // for (let i = 0; i < thoughtSeeds.length; i++) {
+      //   const { _id, thoughtAuthor } = await Thought.create(thoughtSeeds[i]);
+      //   const user = await User.findOneAndUpdate(
+      //     { username: thoughtAuthor },
+      //     {
+      //       $addToSet: {
+      //         thoughts: _id,
+      //       },
+      //     }
+      //   );
+      // }
+    } catch (err) {
+      console.error(err);
+      process.exit(1);
+    }
+  
+    console.log('all done!');
+    process.exit(0);
+    });

@@ -1,4 +1,4 @@
-const { User, Deck, Cards } = require("../models");
+const { User, Deck, Card } = require("../models");
 
 //Note: uncomment once Auth is created.
 const { signToken } = require("../utils/auth");
