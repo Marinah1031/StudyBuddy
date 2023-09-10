@@ -1,36 +1,43 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-  type School {
+  type User {
     _id: ID
-    name: String
-    location: String
-    studentCount: Int
-    classes: [Class]
+    username: String!
+    email: String!
+    decks: [Deck]
   }
 
-  type Class {
+  type Deck {
     _id: ID
-    name: String
-    building: String
-    creditHours: Int
-    professor: Professor
+    title: String!
+    cards: [Card]
   }
 
-  type Professor {
+  type Card {
     _id: ID
-    name: String
-    officeHours: String
-    officeLocation: String
-    studentScore: Float
-    # Add a field that will return an array of Class instances
-    classes: [Class]
+    term: String!
+    def: String!
+  }
+
+  type Auth {
+    token: ID!
+    user: User
   }
 
   type Query {
-    schools: [School]
-    classes: [Class]
-    professors: [Professor]
+    me: User
+    allDecks: [Deck]
+    viewCard(_id: ID!): Card
+  }
+
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+    createDeck(title: String!): User
+    createCard(term: String!, def: String!): Deck
+    removeDeck(_id: ID!): User
+    removeCard(_id: ID!): Deck
   }
 `;
 
