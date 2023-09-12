@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
   });
   //   comparePassword method to check for a valid password entered by the user on login page
   userSchema.methods.isCorrectPassword = async function (password) {
-    await bcrypt.compare(password, this.password);
+    return await bcrypt.compare(password, this.password);
   };
 
 const User = mongoose.model('User', userSchema);
