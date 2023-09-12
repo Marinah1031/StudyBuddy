@@ -6,6 +6,15 @@ const { AuthenticationError } = require("apollo-server-express");
 const loginError = new AuthenticationError(
   "Email and Password pair does not match database."
 );
+
+const loginError1 = new AuthenticationError(
+  "Email problem."
+);
+
+const loginError2 = new AuthenticationError(
+  "PW problem."
+);
+
 const needLogin = new AuthenticationError("You need to be logged in!");
 
 const resolvers = {
@@ -38,13 +47,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw loginError;
+        throw loginError1;
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw loginError;
+        throw loginError2;
       }
 
       const token = signToken(user);
