@@ -10,7 +10,7 @@ const typeDefs = gql`
 
   type Deck {
     _id: ID
-    title: String!
+    deckName: String!
     description: String
     cards: [Card]
   }
@@ -18,7 +18,7 @@ const typeDefs = gql`
   type Card {
     _id: ID
     term: String!
-    def: String!
+    definition: String!
   }
 
   type Auth {
@@ -30,6 +30,8 @@ const typeDefs = gql`
     me: User
     allDecks: [Deck]
     viewCard(_id: ID!): Card
+    allUsers: [User]
+    allCards: [Card]
   }
 
   type Mutation {
