@@ -22,6 +22,9 @@ const resolvers = {
       throw needLogin;
     },
     allDecks: async () => Deck.find(),
+    allUsers: async () => User.find(),
+    allCards: async () => Card.find(),
+
   },
 
   Mutation: {
@@ -48,7 +51,13 @@ const resolvers = {
       return { token, user };
     },
     createDeck: async (parent, { deckName, description }, context) => {
-      //put code here
+      if (context.user) {
+        const deck = new Deck({deckName, description});
+        await deck.findByIdAndUpdate(context.user.id, {
+          $push: {decks: deck}
+        });
+        return deck;
+      }
     },
     removeDeck: async (parent, { deckId }, context) => {
       if (context.user) {
