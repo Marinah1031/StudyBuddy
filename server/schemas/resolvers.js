@@ -37,6 +37,7 @@ const resolvers = {
     viewCard: async (parent, { cardID }) => Card.findOne({ _id: cardID }),
 
     viewUserDecks: async (parent, { userID }) => Deck.find({ createdBy: userID }),
+    viewDeckCards: async (parent, { deckID }) => Card.find({ inDeck: deckID }),
   },
 
   Mutation: {
@@ -76,7 +77,7 @@ const resolvers = {
     },
     removeDeck: async (parent, { deckId }, context) => {
       // if (context.user.id != Deck.findOne({ _id: deckID })) {
-        console.log(deckId);
+        // console.log(deckId);
         const deck = await Deck.findOneAndDelete({
           _id: deckId,
         });
@@ -85,19 +86,11 @@ const resolvers = {
       // }
       // throw ownershp;
     },
-    createCard: async (parent, { deckId, term, definition }, context) => {
+    createCard: async (parent, { term, definition, inDeck }, context) => {
       if (context.user) {
-        return Deck.findOneAndUpdate(
-          { _id: deckId },
-          {
-            $addToSet: {
-              cards: { term, definition },
-            },
-          },
-          {
-            new: true,
-          }
-        );
+        const newCard = await Card.create({ term, definition, inDeck });
+
+        return newCard;
       }
       throw needLogin;
     },
