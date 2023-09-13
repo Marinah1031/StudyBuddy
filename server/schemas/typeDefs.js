@@ -30,9 +30,10 @@ const typeDefs = gql`
   type Query {
     me: User
     allDecks: [Deck]
-    viewCard(_id: ID!): Card
     allUsers: [User]
     allCards: [Card]
+    viewDeck(deckID: ID!): Deck
+    viewCard(cardID: ID!): Card
   }
 
   type Mutation {

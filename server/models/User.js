@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const Deck = require("./Deck");
 const { Schema } = mongoose;
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   username: {
     type: String,
     unique: true,
