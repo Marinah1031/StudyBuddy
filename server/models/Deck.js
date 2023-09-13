@@ -15,7 +15,7 @@ const deckSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
-  Card: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Card' }],
+  // Card: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Card' }],
 });
 
 deckSchema.virtual('cardCount').get(function () {

@@ -22,5 +22,11 @@
     "email": "tomato@gmail.com",
     "password": "12121",
     "decks": []
+  },
+  {
+    "username": "test2",
+    "email": "test2@gmail.com",
+    "password": "test2",
+    "decks": []
   }
 ]
