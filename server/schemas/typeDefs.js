@@ -6,20 +6,20 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    decks: [Deck]
   }
 
   type Deck {
     _id: ID
     deckName: String
     description: String
-    cards: [Card]
+    createdBy: ID
   }
 
   type Card {
     _id: ID
     term: String
     definition: String
+    inDeck: ID
   }
 
   type Auth {
@@ -34,6 +34,7 @@ const typeDefs = gql`
     allCards: [Card]
     viewDeck(deckID: ID!): Deck
     viewCard(cardID: ID!): Card
+    viewUserDecks(userID: ID!): [Deck]
   }
 
   type Mutation {
@@ -41,7 +42,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     createDeck(deckName: String!, description: String): Deck
     createCard(term: String!, definition: String!): Deck
-    removeDeck(_id: ID!): User
+    removeDeck(deckId: ID!): Deck
     removeCard(_id: ID!): Deck
   }
 `;
