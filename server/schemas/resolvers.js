@@ -7,13 +7,9 @@ const loginError = new AuthenticationError(
   "Email and Password pair does not match database."
 );
 
-const loginError1 = new AuthenticationError(
-  "Email problem."
-);
+const loginError1 = new AuthenticationError("Email problem.");
 
-const loginError2 = new AuthenticationError(
-  "PW problem."
-);
+const loginError2 = new AuthenticationError("PW problem.");
 
 const needLogin = new AuthenticationError("You need to be logged in!");
 
@@ -61,14 +57,19 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    createDeck: async (parent, { deckName, description }, context) => {
+    createDeck: async (parent, {deckName, description}, context) => {
+      // console.log(context.user);
       if (context.user) {
-        const deck = new Deck({deckName, description});
-        await deck.findByIdAndUpdate(context.user.id, {
-          $push: {decks: deck}
-        });
-        return deck;
+        const newDeck = new Deck({deckName, description});
+      // console.log(newDeck)
+        await User.findByIdAndUpdate(
+          context.user._id, 
+          {$push: { decks: newDeck} },
+          { new: true }
+        );
+        return newDeck;
       }
+      throw new AuthenticationError("context.user._id");
     },
     removeDeck: async (parent, { deckId }, context) => {
       if (context.user) {
