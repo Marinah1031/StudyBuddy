@@ -34,6 +34,8 @@ const resolvers = {
     allUsers: async () => User.find(),
     allCards: async () => Card.find(),
 
+    viewDeck: async (parent, { deckID }) => Deck.findOne({ _id: deckID }),
+    viewCard: async (parent, { cardID }) => Card.findOne({ _id: cardID }),
   },
 
   Mutation: {
