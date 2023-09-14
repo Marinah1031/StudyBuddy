@@ -1,0 +1,75 @@
+/* Start.css */
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+
+.titleContent{
+  font-size: 45px;
+
+}
+
+
+.wrapper{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.link_wrapper{
+  position: relative;
+}
+
+.hove { /* Use the desired class name */
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #333;
+  transition: all .35s;
+}
+
+.icon{
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .35s;
+  border-radius: 20%;
+}
+
+.icon svg{
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #030303;
+  transition: all .35s;
+  border-radius: 10%;
+}
+
+.hove:hover {
+  width: 200px;
+  border: 3px solid #035372;
+  background: transparent;
+  color: #035372;
+}
+
+.hove:hover + .icon {
+  border: 3px solid #035372;
+  right: -25%;
+}

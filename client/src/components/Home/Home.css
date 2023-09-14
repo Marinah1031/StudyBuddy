@@ -1,0 +1,11 @@
+/* Home.css */
+
+.type-container {
+    display: flex;
+    flex-direction: row; /* Change to row */
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    text-align: center;
+    padding-top: 25%;
+    font-size: 40px;
+}
