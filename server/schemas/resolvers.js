@@ -13,6 +13,8 @@ const loginError2 = new AuthenticationError("PW problem.");
 
 const needLogin = new AuthenticationError("You need to be logged in!");
 
+const ownershp = new AuthenticationError("You don't own this!");
+
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
@@ -26,12 +28,16 @@ const resolvers = {
 
       throw needLogin;
     },
+
     allDecks: async () => Deck.find(),
     allUsers: async () => User.find(),
     allCards: async () => Card.find(),
 
     viewDeck: async (parent, { deckID }) => Deck.findOne({ _id: deckID }),
     viewCard: async (parent, { cardID }) => Card.findOne({ _id: cardID }),
+
+    viewUserDecks: async (parent, { userID }) => Deck.find({ createdBy: userID }),
+    viewDeckCards: async (parent, { deckID }) => Card.find({ inDeck: deckID }),
   },
 
   Mutation: {
@@ -60,45 +66,31 @@ const resolvers = {
     createDeck: async (parent, {deckName, description}, context) => {
       // console.log(context.user);
       if (context.user) {
-        const newDeck = new Deck({deckName, description});
-      // console.log(newDeck)
-        await User.findByIdAndUpdate(
-          context.user._id, 
-          {$push: { decks: newDeck} },
-          { new: true }
-        );
+        const userID = context.user._id;
+        console.log(userID);
+        const newDeck = await Deck.create({deckName, description, createdBy: userID});
+
+        // console.log(newDeck)
         return newDeck;
       }
       throw new AuthenticationError("context.user._id");
     },
     removeDeck: async (parent, { deckId }, context) => {
-      if (context.user) {
+      // if (context.user.id != Deck.findOne({ _id: deckID })) {
+        // console.log(deckId);
         const deck = await Deck.findOneAndDelete({
           _id: deckId,
         });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { decks: deck._id } }
-        );
-
         return deck;
-      }
-      throw needLogin;
+      // }
+      // throw ownershp;
     },
-    createCard: async (parent, { deckId, term, definition }, context) => {
+    createCard: async (parent, { term, definition, inDeck }, context) => {
       if (context.user) {
-        return Deck.findOneAndUpdate(
-          { _id: deckId },
-          {
-            $addToSet: {
-              cards: { term, definition },
-            },
-          },
-          {
-            new: true,
-          }
-        );
+        const newCard = await Card.create({ term, definition, inDeck });
+
+        return newCard;
       }
       throw needLogin;
     },
