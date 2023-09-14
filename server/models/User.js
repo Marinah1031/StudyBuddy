@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const bcrypt = require('bcrypt');
-const Deck = require("./Deck");
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
@@ -19,7 +18,6 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  decks: [Deck.schema],
   });
 
   userSchema.pre('save', async function (next) {
