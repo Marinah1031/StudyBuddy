@@ -1,4 +1,4 @@
-export const getSavedBookIds = () => {
+export const getSavedCardIds = () => {
     const savedCardIds = localStorage.getItem('saved_cards')
       ? JSON.parse(localStorage.getItem('saved_cards'))
       : [];
@@ -6,7 +6,7 @@ export const getSavedBookIds = () => {
     return savedCardIds;
   };
   
-  export const saveBookIds = (cardIdArr) => {
+  export const saveCardIds = (cardIdArr) => {
     if (cardIdArr.length) {
       localStorage.setItem('saved_cards', JSON.stringify(cardIdArr));
     } else {
@@ -14,7 +14,7 @@ export const getSavedBookIds = () => {
     }
   };
   
-  export const removeBookId = (cardId) => {
+  export const removeCardId = (cardId) => {
     const savedCardIds = localStorage.getItem('saved_cards')
       ? JSON.parse(localStorage.getItem('saved_cards'))
       : null;
