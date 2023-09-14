@@ -15,3 +15,19 @@ query AllDecks {
   }
 }`
 ;
+
+export const FIND_SINGLE_DECK = gql`
+query ViewDeck($deckId: ID!) {
+  viewDeck(deckID: $deckId) {
+    _id
+    deckName
+    description
+    createdBy
+    cards {
+      _id
+      term
+      definition
+    }
+  }
+}`
+;

@@ -58,7 +58,7 @@ const httpLink = createHttpLink({
                     element={<CardCreation/>} 
                   /> */}
                   <Route 
-                    path="/saved" 
+                    path="/saved/:deckId" 
                     element={<CardPage/>} 
                   />
                   <Route 
