@@ -1,0 +1,44 @@
+// Home.scss
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Raleway", serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to right, #92d1d8, #009faa);
+}
+
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .home-content {
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border-radius: 20px; // Adding some border-radius to make the button rounded
+      transition: background-color 0.3s ease, transform 0.3s ease; // Adding transition for animation
+      border: none;
+      background-color: #000000;
+      color: white;
+
+
+      &:hover {
+        background-color: #d4dadb; // Change the background color on hover
+        transform: scale(1.05); // Apply a scale transformation on hover
+        color: black;
+      }
+    }
+  }
+}

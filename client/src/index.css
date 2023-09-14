@@ -1,21 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 body {
-    font-family: 'Rubik', sans-serif;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Rubik Mono One', sans-serif;
-  }
-  
-  .small {
-    font-weight: 300;
-    font-style: italic;
-  }
-  
+  margin: 0;
+  font-family: "Raleway", serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to right,   #71bdc5, #009faa);
+}
+
 
   /* src/components/FlippingCard.css */
 .card {
