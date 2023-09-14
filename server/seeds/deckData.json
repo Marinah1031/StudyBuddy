@@ -1,31 +1,26 @@
 [
   {
-    "deckName": "Alberto Harrison",
+    "deckName": "Fullstack Coding",
     "cards": [],
     "description": "FullStack developing definitions"
   },
   {
-    "deckName": "Abigail Adams",
+    "deckName": "Math",
     "cards": [],
     "description": "Geometry"
   },
   {
-    "deckName": "Superman",
+    "deckName": "Chemistry",
     "cards": [],
     "description": "Periodic Table Elements"
   },
   {
-    "deckName": "Spiderman",
+    "deckName": "Insects",
     "cards": [],
     "description": "Arachnids"
   },
   {
-    "deckName": "Little Red Riding Hood",
-    "cards": [],
-    "description": "Foreging in forests"
-  },
-  {
-    "deckName": "George Washington",
+    "deckName": "History",
     "cards": [],
     "description": "U.S.A States and capitals"
   }
