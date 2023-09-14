@@ -2,31 +2,26 @@
   {
     "username": "Jelly",
     "email": "jelly@gmail.com",
-    "password": "12345",
-    "decks": []
+    "password": "12345"
   },
   {
     "username": "Cherry",
     "email": "cherry@gmail.com",
-    "password": "abcde",
-    "decks": []
+    "password": "abcde"
   },
   {
     "username": "peanut",
     "email": "peanut@gmail.com",
-    "password": "0000",
-    "decks": []
+    "password": "0000"
   },
   {
     "username": "tomato",
     "email": "tomato@gmail.com",
-    "password": "12121",
-    "decks": []
+    "password": "12121"
   },
   {
     "username": "test2",
     "email": "test2@gmail.com",
-    "password": "test2",
-    "decks": []
+    "password": "test2"
   }
 ]

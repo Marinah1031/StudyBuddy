@@ -2,26 +2,32 @@
   {
     "deckName": "Fullstack Coding",
     "cards": [],
-    "description": "FullStack developing definitions"
+    "description": "FullStack developing definitions",
+    "createdBy:": ""
   },
   {
     "deckName": "Math",
     "cards": [],
-    "description": "Geometry"
+    "description": "Geometry",
+    "createdBy:": ""
+    
   },
   {
     "deckName": "Chemistry",
     "cards": [],
-    "description": "Periodic Table Elements"
+    "description": "Periodic Table Elements",
+    "createdBy:": ""
   },
   {
     "deckName": "Insects",
     "cards": [],
-    "description": "Arachnids"
+    "description": "Arachnids",
+    "createdBy:": ""
   },
   {
     "deckName": "History",
     "cards": [],
-    "description": "U.S.A States and capitals"
+    "description": "U.S.A States and capitals",
+    "createdBy:": ""
   }
 ]
