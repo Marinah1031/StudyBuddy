@@ -11,10 +11,6 @@ const cardSchema = new Schema({
     type: String,
     required: true,
   },
-  inDeck: {
-    type: Schema.Types.ObjectId,
-    ref: Deck,
-  }
 });
 
 const Card = mongoose.model('Card', cardSchema);
