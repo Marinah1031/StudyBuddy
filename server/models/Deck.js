@@ -1,25 +1,35 @@
-// Deck Model
 const mongoose = require('mongoose');
+const User = require('./User');
 const { Schema } = mongoose;
-const deckSchema = new mongoose.Schema({
+
+const deckSchema = new Schema({
   deckName: {
     type: String,
     required: true,
   },
-  cards: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Card',
-  },
-],
   description: {
     type: String,
     default: '',
   },
-  Card: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Card' }],
+  createdBy: {
+    type: Schema.Types.ObjectId,
+    ref: User,
+  },
+  cards: [{
+    term: {
+      type: String,
+      required: true,
+    },
+    definition: {
+      type: String,
+      required: true,
+    },
+
+  }]
 });
 
 deckSchema.virtual('cardCount').get(function () {
-  return this.flashcards.length;
+  return this.cards.length;
 });
 
 // Ensure that the virtual property is included when converting to JSON

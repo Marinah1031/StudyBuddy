@@ -6,3 +6,39 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to right,   #71bdc5, #009faa);
 }
+
+
+  /* src/components/FlippingCard.css */
+.card {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.front {
+  background-color: #f3f3f3;
+}
+
+.back {
+  background-color: #3498db;
+  transform: rotateY(180deg);
+}

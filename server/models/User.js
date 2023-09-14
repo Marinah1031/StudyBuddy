@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
+const bcrypt = require('bcrypt');
 const { Schema } = mongoose;
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   username: {
     type: String,
     unique: true,
@@ -17,12 +18,20 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  decks: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Deck',
-    },
-    ],
   });
+
+  userSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+      const saltRounds = 10;
+      this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+  
+    next();
+  });
+  //   comparePassword method to check for a valid password entered by the user on login page
+  userSchema.methods.isCorrectPassword = async function (password) {
+    return await bcrypt.compare(password, this.password);
+  };
 
 const User = mongoose.model('User', userSchema);
 
