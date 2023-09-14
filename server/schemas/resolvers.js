@@ -94,6 +94,17 @@ const resolvers = {
       }
       throw needLogin;
     },
+
+    addCard: async (parent, {deckId, term, definition}) => {
+      const deck = await Deck.findOneAndUpdate({ _id: deckId},
+        {$addToSet: {cards: { term, definition }}}, {
+          new: true,
+          runValidators: true,
+        }
+        )
+        return deck;
+    },
+
     removeCard: async (parent, { deckId, cardId }, context) => {
       if (context.user) {
         return Deck.findOneAndUpdate(

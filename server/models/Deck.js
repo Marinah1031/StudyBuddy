@@ -11,10 +11,10 @@ const deckSchema = new Schema({
     type: String,
     default: '',
   },
-  createdBy: {
+  cards: [{
     type: Schema.Types.ObjectId,
-    ref: User,
-  }
+    ref: "Card",
+  }]
 });
 
 deckSchema.virtual('cardCount').get(function () {
