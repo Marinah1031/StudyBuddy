@@ -4,19 +4,23 @@
 //flip button
 
 // src/components/FlippingCard.js
-import React, { useState } from 'react';
+import React, { useState, } from 'react';
 import { useQuery } from '@apollo/client';
 import { FIND_ALL_DECKS } from '../utils/querys';
+import { FIND_SINGLE_DECK} from '../utils/querys';
+import { useParams} from 'react-router-dom';
 
 const CardPage = () => {
-//   const { loading, error, data } = useQuery(FIND_ALL_DECKS);
+    const {deckId} = useParams();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const { loading, data } = useQuery(FIND_SINGLE_DECK, {
+    variables: { deckId: deckId },
+  });
+  if (loading) return <p>Loading...</p>;
 
-//   if (loading) return <p>Loading...</p>;
-//   if (error) return <p>Error: {error.message}</p>;
-
-//   const cards = data.cards;
+  const cards = data?.viewDeck?.cards || [];
+console.log(cards);
 
   const flipCard = () => {
     setIsFlipped(!isFlipped);
@@ -38,18 +42,24 @@ const CardPage = () => {
 
 
   return (
-    <div className={`card ${isFlipped ? 'flipped' : ''}`}>
-      <div className="card-inner front">
-        <button onClick={flipCard}>Flip</button>
-        <p>{currentCard.frontText}</p>
-      </div>
-      <div className="card-inner back">
-        <button onClick={flipCard}>Flip</button>
-        <p>{currentCard.backText}</p>
-      </div>
-      <button onClick={prevCard}>Previous</button>
-      <button onClick={nextCard}>Next</button>
-    </div>
+    <div>
+           <button onClick={prevCard}>Previous</button>
+            <button onClick={nextCard}>Next</button>
+    {cards.length > 1 ? cards.map((card) => (
+            <div className={`card ${isFlipped ? 'flipped' : ''}`}>
+            <div className="card-inner front">
+              <button onClick={flipCard}>Flip</button>
+              <p>{card.term}</p>
+            </div>
+            <div className="card-inner back">
+              <button onClick={flipCard}>Flip</button>
+              <p>{card.definition}</p>
+            </div>
+         
+          </div>
+        ))
+      :"no Cards to show"}
+   </div>
   );
 };
 

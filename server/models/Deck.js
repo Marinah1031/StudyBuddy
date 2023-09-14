@@ -11,9 +11,20 @@ const deckSchema = new Schema({
     type: String,
     default: '',
   },
-  cards: [{
+  createdBy: {
     type: Schema.Types.ObjectId,
-    ref: "Card",
+    ref: User,
+  },
+  cards: [{
+    term: {
+      type: String,
+      required: true,
+    },
+    definition: {
+      type: String,
+      required: true,
+    },
+
   }]
 });
 
