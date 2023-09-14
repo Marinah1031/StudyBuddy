@@ -45,6 +45,7 @@ const typeDefs = gql`
     addCard(deckId: ID!, term: String!, definition: String!): Deck
     removeDeck(deckId: ID!): Deck
     removeCard(deckId: ID!, cardId: ID!): Deck
+    editCard(deckId: ID!, cardId: ID!): Deck
   }
 `;
 

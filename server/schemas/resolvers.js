@@ -132,6 +132,11 @@ const resolvers = {
 
       return updatedDeck;
     },
+
+    // Needs to be implemented: Should be almost identical to removeCard, except without $pull
+    editCard: async (parent, { deckId, cardId }, context) => {
+      return 'Not Yet Implemented';
+    }
   },
 };
 
