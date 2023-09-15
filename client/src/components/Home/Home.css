@@ -6,7 +6,6 @@
     align-items: center;
     justify-content: center; /* Center items horizontally */
     text-align: center;
-    padding-top: 25%;
     font-size: 40px;
-    margin-top: 250px;
+    overflow: auto;
 }

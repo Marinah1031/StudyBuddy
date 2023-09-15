@@ -16,6 +16,11 @@ const DeckEditPage = () => {
     }
 
     const newCard = () => {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth",
+        });
+
         try {
             addCard({
                 variables: {
@@ -39,12 +44,12 @@ const DeckEditPage = () => {
 
 
     return (
-        <div>
+        <div className='cardList'>
             {cards.map((card, index) => (
                 <DeckComponent key={index} term={card.term} definition={card.definition} deckId={deckId} cardId={card._id} />
             ))}
-            <button onClick={newCard}>Add New Card</button>
-            <button onClick={routeChange}>Done Editing</button>
+            <button id='addCard' onClick={newCard}>Add New Card</button>
+            <button id='finishEdit' onClick={routeChange}>Done Editing</button>
         </div>
     );
 }
