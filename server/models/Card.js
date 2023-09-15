@@ -4,11 +4,11 @@ const { Schema } = mongoose;
 const cardSchema = new Schema({
   term: {
     type: String,
-    required: true,
+    default: "",
   },
   definition: {
     type: String,
-    required: true,
+    default: "",
   },
 });
 

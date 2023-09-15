@@ -9,7 +9,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import DeckEdit from './pages/DeckEdit';
+import DeckEdit from './pages/DeckEditPage';
 import CardPage from './pages/CardPage';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home.js';
