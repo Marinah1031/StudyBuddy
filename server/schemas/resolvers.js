@@ -102,9 +102,6 @@ const resolvers = {
         return deck;
     },
 
-    // removeCard not currently working. Passes all error checks
-    // and successfully returns the correct deck. However, the card
-    // still remains within the deck after running.
     removeCard: async (parent, { deckId, cardId }, context) => {
       const deck = await Deck.findOne({ _id: deckId });
 
@@ -126,7 +123,7 @@ const resolvers = {
       );
 
       // Handle case where Card is not found in the deck
-      if (!updatedDeck) {
+      if (updatedDeck.cards.length === deck.cards.length) {
         throw new Error('Card not found in the deck');
       }
 
@@ -134,8 +131,38 @@ const resolvers = {
     },
 
     // Needs to be implemented: Should be almost identical to removeCard, except without $pull
-    editCard: async (parent, { deckId, cardId }, context) => {
-      return 'Not Yet Implemented';
+    editCard: async (parent, { deckId, cardId, updatedTerm, updatedDefinition }, context) => {
+      const deck = await Deck.findOne({ _id: deckId });
+
+      // Handle case where deck with the given deckId does not exist
+      if (!deck) {
+        throw new Error('Deck not found');
+      }
+
+      // If the deck's createdBy doesn't match the user's id, throw an error
+      if (deck.createdBy.toString() !== context.user._id) {
+        throw new Error(ownership);
+      }
+
+      // Remove the card from the deck
+      const updatedDeck = await Deck.findOneAndUpdate(
+        { _id: deckId, 'cards._id': cardId },
+        {
+          $set: {
+            'cards.$.term': updatedTerm,
+            'cards.$.definition': updatedDefinition,
+          },
+        },
+        { new: true }
+      );
+
+      // console.log(updatedDeck.cards === deck.cards);
+      // Handle case where Card is not found in the deck
+      // if (updatedDeck.cards === deck.cards) {
+      //   throw new Error('Card not found in the deck');
+      // }
+
+      return updatedDeck;
     }
   },
 };
