@@ -80,6 +80,7 @@
   .navbar{
     background-color: rgba(0, 0, 0, 1); 
     opacity: 60%;
+    flex-direction: column;
   }
   
   @media (min-width: 768px) {
@@ -90,6 +91,7 @@
       float: none; 
       display: flex; 
       justify-content: center;
+      flex-direction: column;
     }
     
     .navbar-nav {
