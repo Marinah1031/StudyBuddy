@@ -1,6 +1,6 @@
 /* Home.css */
 
-.type-container {
+.type-container-writer {
     display: flex;
     flex-direction: row; /* Change to row */
     align-items: center;

@@ -10,7 +10,7 @@ function Home() {
     return (
         <section>
             <Navbar />
-            <Container className="type-container">
+            <Container className="type-container-writer">
                 <Col md={12} className="text-left type-margin">
                     <div className="title-Study">Study For: </div><Type />
                 </Col>
