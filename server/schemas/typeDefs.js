@@ -31,11 +31,10 @@ const typeDefs = gql`
     me: User
     allDecks: [Deck]
     allUsers: [User]
-    allCards: [Card]
     viewDeck(deckID: ID!): Deck
     viewCard(cardID: ID!): Card
     viewUserDecks(userID: ID!): [Deck]
-    viewDeckCards(userID: ID!): [Card]
+    viewDeckCards(deckID: ID!): [Deck]
   }
 
   type Mutation {
@@ -45,7 +44,8 @@ const typeDefs = gql`
     createCard(term: String!, definition: String!, inDeck: ID!): Card
     addCard(deckId: ID!, term: String!, definition: String!): Deck
     removeDeck(deckId: ID!): Deck
-    removeCard(_id: ID!): Card
+    removeCard(deckId: ID!, cardId: ID!): Deck
+    editCard(deckId: ID!, cardId: ID!): Deck
   }
 `;
 

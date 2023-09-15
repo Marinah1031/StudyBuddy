@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const User = require('./User');
+const Card = require('./Card');
 const { Schema } = mongoose;
+
 
 const deckSchema = new Schema({
   deckName: {
@@ -10,22 +12,14 @@ const deckSchema = new Schema({
   description: {
     type: String,
     default: '',
+    required: true,
   },
   createdBy: {
     type: Schema.Types.ObjectId,
     ref: User,
+    required: true,
   },
-  cards: [{
-    term: {
-      type: String,
-      required: true,
-    },
-    definition: {
-      type: String,
-      required: true,
-    },
-
-  }]
+  cards: [Card]
 });
 
 deckSchema.virtual('cardCount').get(function () {

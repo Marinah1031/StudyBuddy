@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Deck = require('./Deck');
 const { Schema } = mongoose;
 
 const cardSchema = new Schema({
@@ -13,6 +12,4 @@ const cardSchema = new Schema({
   },
 });
 
-const Card = mongoose.model('Card', cardSchema);
-
-module.exports = Card;
+module.exports = cardSchema;
