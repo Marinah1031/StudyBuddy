@@ -1,28 +1,17 @@
 /* Start.css */
 
-body{
-  font-family: 'Lato', sans-serif;
-}
-
-
-.titleContent{
-  font-size: 45px;
-
-}
-
-
-.wrapper{
+#start-wrapper {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.link_wrapper{
+#start-link_wrapper {
   position: relative;
 }
 
-.hove { /* Use the desired class name */
+#start-link_wrapper .hove {
   display: block;
   width: 250px;
   height: 50px;
@@ -38,7 +27,7 @@ body{
   transition: all .35s;
 }
 
-.icon{
+#start-icon {
   width: 50px;
   height: 50px;
   border: 3px solid transparent;
@@ -51,7 +40,7 @@ body{
   border-radius: 20%;
 }
 
-.icon svg{
+#start-icon svg {
   width: 30px;
   position: absolute;
   top: calc(50% - 15px);
@@ -62,14 +51,14 @@ body{
   border-radius: 10%;
 }
 
-.hove:hover {
+#start-link_wrapper .hove:hover {
   width: 200px;
   border: 3px solid #035372;
   background: transparent;
   color: #035372;
 }
 
-.hove:hover + .icon {
+#start-link_wrapper .hove:hover + #start-icon {
   border: 3px solid #035372;
   right: -25%;
 }

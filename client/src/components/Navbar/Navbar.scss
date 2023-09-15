@@ -77,17 +77,19 @@
   }
   
   
-  /*everything below here is just setting up the page, so dont worry about it */
-  
+  .navbar{
+    background-color: rgba(0, 0, 0, 1); 
+    opacity: 60%;
+  }
   
   @media (min-width: 768px) {
     .navbar {
-      background-color: rgba(0, 0, 0, 1); /* Set the background color */
+      background-color: rgba(0, 0, 0, 1); 
       opacity: 60%;
-      text-align: center; /* Center the content horizontally */
-      float: none; /* Remove any floating */
-      display: flex; /* Use flexbox to align items horizontally */
-      justify-content: center; /* Center items horizontally */
+      text-align: center; 
+      float: none; 
+      display: flex; 
+      justify-content: center;
     }
     
     .navbar-nav {

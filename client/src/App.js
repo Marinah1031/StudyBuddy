@@ -13,6 +13,7 @@ import CardCreation from './pages/CardCreation';
 import CardPage from './pages/CardPage';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home.js';
+import Login from './components/Login/LoginStyles/Login'
 
 
 const httpLink = createHttpLink({
@@ -55,6 +56,7 @@ const client = new ApolloClient({
                   element={<h1 className="display-2">Wrong page!</h1>}
                 />
                 <Route path='/' element={<Home/>}/>
+                <Route path='/login' element={<Login/>}/>
               </Routes>
               
             </>
