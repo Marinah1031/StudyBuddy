@@ -53,3 +53,18 @@ export const REMOVE_CARD = gql`
     }
   }
 `;
+
+export const EDIT_SINGLE_CARD = gql`
+mutation EditCard($deckId: ID!, $cardId: ID!, $updatedTerm: String!, $updatedDefinition: String!) {
+  editCard(deckId: $deckId, cardId: $cardId, updatedTerm: $updatedTerm, updatedDefinition: $updatedDefinition) {
+    _id
+    deckName
+    description
+    createdBy
+    cards {
+      _id
+      term
+      definition
+    }
+  }
+}`;

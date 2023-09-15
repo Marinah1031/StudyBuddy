@@ -9,7 +9,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import CardCreation from './pages/CardCreation';
+import DeckEdit from './pages/DeckEdit';
 import CardPage from './pages/CardPage';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home.js';
@@ -43,10 +43,10 @@ const client = new ApolloClient({
             <>
               {/* <Navbar /> */}
               <Routes>
-                {/* <Route
-                  path="/"
-                  element={<CardCreation/>}
-                /> */}
+                <Route
+                  path="/saved/:deckId/edit"
+                  element={<DeckEdit/>}
+                />
                 <Route
                   path="/saved/:deckId"
                   element={<CardPage/>}

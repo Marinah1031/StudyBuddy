@@ -130,7 +130,6 @@ const resolvers = {
       return updatedDeck;
     },
 
-    // Needs to be implemented: Should be almost identical to removeCard, except without $pull
     editCard: async (parent, { deckId, cardId, updatedTerm, updatedDefinition }, context) => {
       const deck = await Deck.findOne({ _id: deckId });
 
@@ -140,9 +139,9 @@ const resolvers = {
       }
 
       // If the deck's createdBy doesn't match the user's id, throw an error
-      if (deck.createdBy.toString() !== context.user._id) {
-        throw new Error(ownership);
-      }
+      // if (deck.createdBy.toString() !== context.user._id) {
+      //   throw new Error(ownership);
+      // }
 
       // Remove the card from the deck
       const updatedDeck = await Deck.findOneAndUpdate(
