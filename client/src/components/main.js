@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar/Navbar';
 import './cards.css';
 
 function Deck ({ deckName, description, createdBy, deckId }) {
+
+   
     // const [term, setTerm] = useState(initialTerm);
     // const [definition, setDefinition] = useState(initialDefinition);
 
@@ -27,7 +29,7 @@ function Deck ({ deckName, description, createdBy, deckId }) {
             <section>
                    <Navbar />
                 <div>
-                  <p>hi{deckName}</p>
+                  <p>{deckName}</p>
                 </div>
                 <div>
                   <p>{description}</p>

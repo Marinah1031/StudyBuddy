@@ -51,20 +51,19 @@ const MainPage = () => {
           {">"}
         </button> */}
       </div>
-      {decks.length > 0 ? (
-        <Deck
-        //   currentIndex={currentIndex}
-        //   currentCard={currentIndex}
-          deckName={decks.deckName}
-          description={decks.description}
-          createdBy={decks.createdBy}
-          deckId={decks._id}
-        />
-      ) : (
+      {decks.map((decks) => (
+                <Deck deckName={decks.deckName} description={decks.description} createdBy={decks.createdBy} deckId={decks._id} />
+            ))}
+       {/* : (
         <p>No Cards to show</p>
-      )}
+      ) */}
     </section>
   );
 };
 
 export default MainPage;
+
+// deckName={decks.deckName}
+// description={decks.description}
+// createdBy={decks.createdBy}
+// deckId={decks._id}
