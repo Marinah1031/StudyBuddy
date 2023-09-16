@@ -1,0 +1,48 @@
+.deck-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .deck-link {
+    text-decoration: none;
+    background-image: linear-gradient(to right,   #76dde9, #07949e);
+    color: black;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 500px;
+    height: 200px;
+  }
+  
+  .deck-link:hover {
+    background-image: linear-gradient(to right,   #52adb8, #05838b);
+  }
+  
+  .deck-info {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .deck-info p.deck-name {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .deck-info p.description {
+    font-size: 23px;
+  }
+  
+  .deck-info p.created-by {
+    font-size: 15px;
+    color: #444444;
+  }
+  
+  .deck-info p.deck-id {
+    font-size: 14px;
+    color: #444444;
+  }
+
+  
