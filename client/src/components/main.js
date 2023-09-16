@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import './cards.css';
+import { Link } from 'react-router-dom';
 
 function Deck ({ deckName, description, createdBy, deckId }) {
 
@@ -28,6 +29,8 @@ function Deck ({ deckName, description, createdBy, deckId }) {
         return (
             <section>
                    <Navbar />
+                   <button>
+                   <Link to={`/saved/${deckId}`}>
                 <div>
                   <p>{deckName}</p>
                 </div>
@@ -40,6 +43,8 @@ function Deck ({ deckName, description, createdBy, deckId }) {
                 <div>
                   <p>{deckId}</p>
                 </div>
+                </Link>
+                </button>
             </section>
           );
 }
