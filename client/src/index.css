@@ -1,10 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   font-family: "Raleway", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to right,   #71bdc5, #009faa);
+  background-image: linear-gradient(to right, #71bdc5, #009faa);
+  overflow: auto;
+  min-height: 100vh;
 }
 
 
@@ -32,6 +46,35 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cardList {
+  width: 80vw;
+  display: flex;
+  align-items: 'center';
+  flex-direction: column;
+}
+
+.editCard {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+#addCard, #finishEdit {
+  position: fixed;
+  margin: 20px;
+  width: 150px;
+}
+
+#addCard {
+  right: 10px;
+  bottom: 50px;
+}
+
+#finishEdit {
+  right: 10px;
+  bottom: 10px;
 }
 
 .front {

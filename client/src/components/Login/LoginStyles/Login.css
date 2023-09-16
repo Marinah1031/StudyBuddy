@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Raleway', sans-serif !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .navbar {
   position: fixed;
   top: 0;
@@ -18,22 +9,11 @@
   padding: 10px 20px;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-image: linear-gradient(to right, #71bdc5, #009faa);
-  overflow: hidden;
-  margin-top: 50px; /* Add margin to prevent content from being hidden behind the navbar */
-}
-
 .wrapper {
   position: relative;
   width: 400px;
   height: 500px;
 }
-
 
 .form-wrapper {
     position: absolute;

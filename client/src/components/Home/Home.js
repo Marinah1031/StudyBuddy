@@ -11,8 +11,9 @@ function Home() {
         <section>
             <Navbar />
             <Container className="type-container-writer">
-                <Col md={12} className="text-left type-margin">
-                    <div className="title-Study">Study For: </div><Type />
+                <Col md={12} className="text-center type-margin">
+                    <div className="title-Study">Study For: </div>
+                    <Type />
                 </Col>
             </Container>
             <Container fluid className="home-section" id="home">
@@ -27,5 +28,6 @@ function Home() {
         </section>
     );
 }
+
 
 export default Home;

@@ -2,16 +2,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 
-body {
-  margin: 0;
-  font-family: "Raleway", serif !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to right, #92d1d8, #009faa);
-}
-
 .home-section {
-  min-height: 100vh;
+  min-height: 10vh;
+  max-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;

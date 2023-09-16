@@ -1,12 +1,23 @@
 /* Home.css */
 
 .type-container-writer {
-    display: flex;
-    flex-direction: row; /* Change to row */
-    align-items: center;
-    justify-content: center; /* Center items horizontally */
-    text-align: center;
-    padding-top: 25%;
     font-size: 40px;
-    margin-top: 250px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-bottom: 5%;
+  }
+
+  @media (min-width: 768px) {
+    .type-container-writer{
+        font-size: 40px;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        
+    }
+  } 

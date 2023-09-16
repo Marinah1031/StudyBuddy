@@ -62,7 +62,7 @@ const DeckComponent = ({ term: initialTerm, definition: initialDefinition, cardI
     }
 
     return (
-        <div className="card">
+        <div className="editCard">
             <form onSubmit={handleSubmit}>
                 <label>
                     <input
@@ -80,7 +80,7 @@ const DeckComponent = ({ term: initialTerm, definition: initialDefinition, cardI
                         onChange={handleChange}
                     />
                 </label>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Save" />                
             </form>
             <button onClick={deleteCard}>Delete</button>
         </div>
