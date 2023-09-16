@@ -44,7 +44,7 @@ const CardPage = () => {
         <button onClick={prevCard}>Previous</button>
         <button onClick={nextCard}>Next</button>
         {cards.length > 1 ? cards.map((card, i) => (
-          <CardComponent currentIndex={currentIndex} currentCard={i} term={card.term} definition={card.definition}/>
+          <CardComponent currentIndex={currentIndex} key={i} currentCard={i} term={card.term} definition={card.definition}/>
         ))
           : "no Cards to show"}
       </div>}
