@@ -7,8 +7,8 @@
     transform: translateZ(0);
     transition-duration: 0.3s;
     transition-property: transform;
-    color: gray; /* Set the text color to gray */
-    text-decoration: none; /* Remove text decoration */
+    color: gray;
+    text-decoration: none;
   }
   
   .hoverable:before {
@@ -34,8 +34,8 @@
   .hoverable:active,
   .hoverable:focus {
     transform: translateY(-5px);
-    color: white; /* Change text color to white on hover */
-    text-decoration: none; /* Remove text decoration on hover */
+    color: white;
+    text-decoration: none; 
   }
   
   .hoverable:hover:before,
@@ -73,7 +73,7 @@
   
   .bounce {
     animation-name: bounce-animation;
-    animation-duration: 2s;
+    animation-duration: 3s;
   }
   
   
@@ -86,7 +86,7 @@
   @media (min-width: 768px) {
     .navbar {
       background-color: rgba(0, 0, 0, 1); 
-      opacity: 60%;
+
       text-align: center; 
       float: none; 
       display: flex; 
@@ -104,4 +104,4 @@
       margin: 0 30px;
       font-size: 20px;
     }
-  } //small comment
+  } 
