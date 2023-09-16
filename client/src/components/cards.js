@@ -1,31 +1,36 @@
-import React, { useState, } from 'react';
-// import { useQuery } from '@apollo/client';
-// import { FIND_ALL_DECKS } from '../utils/querys';
-// import { FIND_SINGLE_DECK} from '../utils/querys';
-// import { useParams} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar/Navbar';
+import './cards.css';
 
 function CardComponent({ term, definition, currentIndex, currentCard }) {
-    const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
-    const flipCard = () => {
-        setIsFlipped(!isFlipped);
-    };
+  // Add a useEffect to watch for changes in currentIndex
+  useEffect(() => {
+    setIsFlipped(false); // Reset card flip state when currentIndex changes
+  }, [currentIndex]);
 
-    return (
-        <section style={{display: currentIndex === currentCard ? "" : "none"}}>
-          
-            <div className={`card ${isFlipped ? 'flipped' : ''}`}>
-                <div className="card-inner front">
-                    <button onClick={flipCard}>Flip</button>
-                    <p>{term}</p>
-                </div>
-                <div className="card-inner back">
-                    <button onClick={flipCard}>Flip</button>
-                    <p>{definition}</p>
-                </div>
-            </div>
-        </section>
-    )
+  const flipCard = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  const handleClick = () => {
+    flipCard();
+  };
+
+  return (
+    <section style={{ display: currentIndex === currentCard ? '' : 'none' }}>
+      <Navbar />
+      <button className={`card ${isFlipped ? 'flipped' : ''}`} onClick={handleClick}>
+        <div className="card-inner front">
+          <p>{term}</p>
+        </div>
+        <div className="card-inner back">
+          <p>{definition}</p>
+        </div>
+      </button>
+    </section>
+  );
 }
 
 export default CardComponent;

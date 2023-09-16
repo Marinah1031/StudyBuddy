@@ -1,0 +1,64 @@
+/* CardPage.module.css */
+
+.card-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+  }
+  
+  .card-nav {
+    position: absolute;
+  }
+  
+  .nav-button1 {
+    font-family: "Raleway", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to right,   #71bdc5, #009faa);
+    border: none;
+    border-radius: 40%;
+    width: 45px;
+    height: 50px;
+    font-size: 26px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 550px;
+  }
+
+  .nav-button2 {
+    font-family: "Raleway", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to right,   #71bdc5, #009faa);
+    border: none;
+    border-radius: 40%;
+    width: 45px;
+    height: 50px;
+    font-size: 26px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button1:hover {
+    font-family: "Raleway", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to right,   #3e929b, #006a72);
+  }
+
+  .nav-button2:hover {
+    font-family: "Raleway", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to right,   #3e929b, #006a72);
+  }
+  
