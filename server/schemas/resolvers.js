@@ -34,6 +34,16 @@ const resolvers = {
 
     viewDeck: async (parent, { deckID }) => Deck.findOne({ _id: deckID }),
     viewUserDecks: async (parent, { userID }) => Deck.find({ createdBy: userID }),
+    getUserDecks: async (parent, args, context) => {
+      if (context.user) {
+        const uerDecks = await Deck.find({ createdBy: context.user._id });
+
+        return uerDecks;
+      }
+
+      throw needLogin;
+    },
+
   },
 
   Mutation: {
