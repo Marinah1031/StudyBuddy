@@ -21,3 +21,8 @@
         
     }
   } 
+    justify-content: center; /* Center items horizontally */
+    text-align: center;
+    font-size: 40px;
+    overflow: auto;
+}

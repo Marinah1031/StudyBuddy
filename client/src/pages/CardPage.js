@@ -69,6 +69,17 @@ const CardPage = () => {
       ) : (
         <p>No Cards to show</p>
       )}
+    <section>
+      <h1>title</h1>
+      <h2>definition</h2>
+      {<div>
+        <button onClick={prevCard}>Previous</button>
+        <button onClick={nextCard}>Next</button>
+        {cards.length > 1 ? cards.map((card, i) => (
+          <CardComponent currentIndex={currentIndex} key={i} currentCard={i} term={card.term} definition={card.definition}/>
+        ))
+          : "no Cards to show"}
+      </div>}
     </section>
   );
 };

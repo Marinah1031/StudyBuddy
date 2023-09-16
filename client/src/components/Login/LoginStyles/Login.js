@@ -6,28 +6,31 @@ import "./Login.css";
 
 function Login() {
   useEffect(() => {
-    const handleSignUpClick = () => {
+    const handleSignUpClick = ( event ) => {
+      event.preventDefault();
+
       const wrapper = document.querySelector('.wrapper');
       wrapper.classList.add('animate-signIn');
       wrapper.classList.remove('animate-signUp');
     };
 
-    const handleSignInClick = () => {
+    const handleSignInClick = (event ) => {
+      event.preventDefault();
       const wrapper = document.querySelector('.wrapper');
       wrapper.classList.add('animate-signUp');
       wrapper.classList.remove('animate-signIn');
     };
 
     const signUpLink = document.querySelector('.signUp-link');
-    const signInLink = document.querySelector('.signIn-link');
+    const signInLink = document.querySelector('#login');
 
-    signUpLink.addEventListener('click', handleSignUpClick);
-    signInLink.addEventListener('click', handleSignInClick);
+    signUpLink.addEventListener('submit', handleSignUpClick);
+    signInLink.addEventListener('submit', handleSignInClick);
 
     // Cleanup: Remove event listeners when the component unmounts
     return () => {
-      signUpLink.removeEventListener('click', handleSignUpClick);
-      signInLink.removeEventListener('click', handleSignInClick);
+      signUpLink.removeEventListener('submit', handleSignUpClick);
+      signInLink.removeEventListener('submit', handleSignInClick);
     };
   }, []);
 
@@ -68,7 +71,7 @@ function Login() {
           </div>
 
           <div className="form-wrapper sign-in">
-            <form action="">
+            <form id="login">
               <h2>Login</h2>
               <div className="input-group">
                 <input type="text" required />
