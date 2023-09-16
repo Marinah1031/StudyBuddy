@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import Navbar from "../../Navbar/Navbar";
 import "./Login.css";
-import { useMutation } from '@apollo/client';
+import { useMutation } from "@apollo/client";
 import { LOGIN_USER, ADD_USER } from "../../../utils/mutations";
 import Auth from "../../../utils/auth";
 
 function Login(props) {
   useEffect(() => {
-
     const handleSignUpClick = () => {
       // event.preventDefault();
 
@@ -36,9 +35,11 @@ function Login(props) {
     };
   }, []);
 
-
-  //handles the login form
-  const [loginFormState, setLoginFormState] = useState({ email: '', password: '' });
+  //code for handling the login form
+  const [loginFormState, setLoginFormState] = useState({
+    email: "",
+    password: "",
+  });
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const loginHandleChange = (event) => {
@@ -49,18 +50,51 @@ function Login(props) {
     });
   };
 
-const handleSignInSubmit = async (event) => {
-  event.preventDefault();
-  try {
-    console.log(loginFormState)
-const loginResponse = await login({ variables: {email:loginFormState.email, password: loginFormState.password}});
-const token = loginResponse.data.login.token;
-Auth.login(token);
-  } catch (err) {
-    console.log(err);
-  }
+  const handleSignInSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      console.log(loginFormState);
+      const loginResponse = await login({
+        variables: {
+          email: loginFormState.email,
+          password: loginFormState.password,
+        },
+      });
+      const token = loginResponse.data.login.token;
+      Auth.login(token);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-}
+  //code for handling the signin form
+  const [signupFormState, setSignupFormState] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  const [addUser] = useMutation(ADD_USER);
+
+  const handleSignupSubmit = async (event) => {
+    event.preventDefault();
+    const signupResponse = await addUser({
+      variables: {
+        username: signupFormState.username,
+        email: signupFormState.email,
+        password: signupFormState.password,
+      },
+    });
+    const token = signupResponse.data.addUser.token;
+    Auth.login(token);
+  };
+
+  const signupHandleChange = (event) => {
+    const { name, value } = event.target;
+    setSignupFormState({
+      ...signupFormState,
+      [name]: value,
+    });
+  };
 
   return (
     <section>
@@ -70,18 +104,36 @@ Auth.login(token);
       <Container className='type-container'>
         <div className='wrapper'>
           <div className='form-wrapper sign-up'>
-            <form id='signup'>
+            <form onSubmit={handleSignupSubmit}>
               <h2>Sign Up</h2>
               <div className='input-group'>
-                <input type='text' required />
+                <input
+                  type='username'
+                  name='username'
+                  id='username'
+                  onChange={signupHandleChange}
+                  required
+                />
                 <label htmlFor=''>Username</label>
               </div>
               <div className='input-group'>
-                <input type='email' required />
+                <input
+                  type='email'
+                  name='email'
+                  id='email'
+                  onChange={signupHandleChange}
+                  required
+                />
                 <label htmlFor=''>Email</label>
               </div>
               <div className='input-group'>
-                <input type='password' required />
+                <input
+                  type='password'
+                  name='password'
+                  id='password'
+                  onChange={signupHandleChange}
+                  required
+                />
                 <label htmlFor=''>Password</label>
               </div>
               <button type='submit' className='btn'>
@@ -90,9 +142,7 @@ Auth.login(token);
               <div className='sign-link'>
                 <p>
                   Already have an account?{" "}
-                  <a className='signIn-link'>
-                    Sign In
-                  </a>
+                  <a className='signIn-link'>Sign In</a>
                 </p>
               </div>
             </form>
@@ -102,33 +152,41 @@ Auth.login(token);
             <form onSubmit={handleSignInSubmit}>
               <h2>Login</h2>
               <div className='input-group'>
-                <input type='email'
-                name="email"
-                id = "email"
-                onChange={loginHandleChange} required />
+                <input
+                  type='email'
+                  name='email'
+                  id='email'
+                  onChange={loginHandleChange}
+                  required
+                />
                 <label htmlFor='email'>Email</label>
               </div>
               <div className='input-group'>
-                <input type='password' name='password' id="password" onChange={loginHandleChange} required />
+                <input
+                  type='password'
+                  name='password'
+                  id='password'
+                  onChange={loginHandleChange}
+                  required
+                />
                 <label htmlFor='password'>Password</label>
               </div>
               <div className='forgot-pass'>
                 <a href='#'>Forgot Password?</a>
               </div>
               {error ? (
-          <div>
-            <p className="error-text">Entered credentials do not match. Please try again.</p>
-          </div>
-        ) : null}
+                <div>
+                  <p className='error-text'>
+                    Entered credentials do not match. Please try again.
+                  </p>
+                </div>
+              ) : null}
               <button type='submit' className='btn'>
                 Login
               </button>
               <div className='sign-link'>
                 <p>
-                  Don't have an account?{" "}
-                  <a className='signUp-link'>
-                    Sign Up
-                  </a>
+                  Don't have an account? <a className='signUp-link'>Sign Up</a>
                 </p>
               </div>
             </form>
