@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Container } from "react-bootstrap";
 import "./Navbar.scss";
 import { applyBounceAnimation } from './Animate';
 

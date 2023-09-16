@@ -31,3 +31,31 @@ query ViewDeck($deckId: ID!) {
   }
 }`
 ;
+
+export const FIND_ALL_USERS = gql`
+query AllUsers {
+  allUsers {
+    _id
+    username
+  }
+}`
+;
+
+export const QUERY_ME = gql`
+query Me {
+  me {
+    _id
+    username
+  }
+}
+`;
+
+export const VIEW_USER_DECKS = gql`
+query ViewUserDecks($userId: ID!) {
+  viewUserDecks(userID: $userId) {
+    _id
+    deckName
+    description
+  }
+}
+`
