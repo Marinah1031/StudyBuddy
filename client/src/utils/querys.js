@@ -32,6 +32,23 @@ query ViewDeck($deckId: ID!) {
 }`
 ;
 
+export const GET_USER_DECKS = gql`
+query GetUserDecks {
+  getUserDecks {
+    _id
+    deckName
+    description
+    createdBy
+    cards {
+      _id
+      term
+      definition
+    }
+  }
+}`
+;
+
+
 export const FIND_ALL_USERS = gql`
 query AllUsers {
   allUsers {
