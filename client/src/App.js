@@ -14,7 +14,8 @@ import CardPage from './pages/CardPage';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home.js';
 import Login from './components/Login/LoginStyles/Login'
-
+import MainPage from './pages/MainPage';
+import UserPage from './pages/UserPage';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -50,6 +51,14 @@ const client = new ApolloClient({
                 <Route
                   path="/saved/:deckId"
                   element={<CardPage/>}
+                />
+                    <Route
+                  path="/main"
+                  element={<MainPage/>}
+                />
+                    <Route
+                  path="/main/:userId"
+                  element={<UserPage/>}
                 />
                 <Route
                   path='*'
