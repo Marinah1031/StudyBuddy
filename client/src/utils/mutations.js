@@ -1,14 +1,15 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
-mutation Login($email: String!, $password: String!) {
-  login(email: $email, password: $password) {
-    token
-    user {
-      _id
+  mutation Login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        _id
+        username
+      }
     }
   }
-}
 `;
 
 export const ADD_USER = gql`
@@ -39,47 +40,59 @@ export const SAVE_CARD = gql`
 `;
 
 export const REMOVE_CARD = gql`
-mutation RemoveCard($deckId: ID!, $cardId: ID!) {
-  removeCard(deckId: $deckId, cardId: $cardId) {
-    _id
-    deckName
-    description
-    createdBy
-    cards {
+  mutation RemoveCard($deckId: ID!, $cardId: ID!) {
+    removeCard(deckId: $deckId, cardId: $cardId) {
       _id
-      term
-      definition
+      deckName
+      description
+      createdBy
+      cards {
+        _id
+        term
+        definition
+      }
     }
   }
-}
 `;
 
 export const EDIT_SINGLE_CARD = gql`
-mutation EditCard($deckId: ID!, $cardId: ID!, $updatedTerm: String!, $updatedDefinition: String!) {
-  editCard(deckId: $deckId, cardId: $cardId, updatedTerm: $updatedTerm, updatedDefinition: $updatedDefinition) {
-    _id
-    deckName
-    description
-    createdBy
-    cards {
+  mutation EditCard(
+    $deckId: ID!
+    $cardId: ID!
+    $updatedTerm: String!
+    $updatedDefinition: String!
+  ) {
+    editCard(
+      deckId: $deckId
+      cardId: $cardId
+      updatedTerm: $updatedTerm
+      updatedDefinition: $updatedDefinition
+    ) {
       _id
-      term
-      definition
+      deckName
+      description
+      createdBy
+      cards {
+        _id
+        term
+        definition
+      }
     }
   }
-}`;
+`;
 
-export const ADD_CARD= gql`
-mutation AddCard($deckId: ID!) {
-  addCard(deckId: $deckId) {
-    _id
-    deckName
-    description
-    createdBy
-    cards {
+export const ADD_CARD = gql`
+  mutation AddCard($deckId: ID!) {
+    addCard(deckId: $deckId) {
       _id
-      term
-      definition
+      deckName
+      description
+      createdBy
+      cards {
+        _id
+        term
+        definition
+      }
     }
   }
-}`;
+`;
