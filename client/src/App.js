@@ -57,7 +57,7 @@ const client = new ApolloClient({
                   element={<MainPage/>}
                 />
                     <Route
-                  path="/main/:userId"
+                  path="/userPage"
                   element={<UserPage/>}
                 />
                 <Route

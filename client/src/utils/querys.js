@@ -33,7 +33,7 @@ query ViewDeck($deckId: ID!) {
 ;
 
 export const GET_USER_DECKS = gql`
-query GetUserDecks {
+{
   getUserDecks {
     _id
     deckName
