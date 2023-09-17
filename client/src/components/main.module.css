@@ -7,7 +7,7 @@
   
   .deck-link {
     text-decoration: none;
-    background-image: linear-gradient(to right,   #76dde9, #07949e);
+    background-image: linear-gradient(to right,   #ffffff, #d4d4d4);
     color: black;
     border: none;
     border-radius: 30px;
@@ -18,7 +18,7 @@
   }
   
   .deck-link:hover {
-    background-image: linear-gradient(to right,   #52adb8, #05838b);
+    background-image: linear-gradient(to right,   #8fd69b, #519f61);
   }
   
   .deck-info {
