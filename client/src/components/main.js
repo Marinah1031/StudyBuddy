@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 function Deck({ deckName, description, createdBy, deckId }) {
   return (
     <section key={deckId}>
-      <Navbar />
       <div className={styles['deck-container']}>
         <button className={styles['deck-link']}>
           <Link to={`/saved/${deckId}`} className={styles['deck-link']}>
@@ -14,7 +13,7 @@ function Deck({ deckName, description, createdBy, deckId }) {
               <p className={styles['deck-name']}>{deckName}</p>
               <p className={styles['description']}>{description}</p>
               <p className={styles['created-by']}>Created by: {createdBy}</p>
-              <p className={styles['deck-id']}>Deck ID: {deckId}</p>
+              {/* <p className={styles['deck-id']}>Deck ID: {deckId}</p> */}
             </div>
           </Link>
         </button>

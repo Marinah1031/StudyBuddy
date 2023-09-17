@@ -98,9 +98,7 @@ function Login(props) {
 
   return (
     <section>
-      <Container className='navbar'>
-        <Navbar />
-      </Container>
+ 
       <Container className='type-container'>
         <div className='wrapper'>
           <div className='form-wrapper sign-up'>

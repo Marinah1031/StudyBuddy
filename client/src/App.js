@@ -42,7 +42,7 @@ const client = new ApolloClient({
         <ApolloProvider client={client}>
           <Router>
             <>
-              {/* <Navbar /> */}
+              <Navbar />
               <Routes>
                 <Route
                   path="/saved/:deckId/edit"
