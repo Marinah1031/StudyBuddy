@@ -45,18 +45,13 @@ const CardPage = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
-  }, [cards]);
+  });
 
   if (loading) return <p>Loading...</p>;
 
   return (
     <section className={styles['card-page']}>
       <div className={styles['card-nav']}>
-        {
-          data.viewDeck.createdBy === thisUser?.me?._id?
-          (<button id='' onClick={routeChange}>Edit Deck</button>)
-          : (<></>)
-        }
         <button className={styles['nav-button1']} onClick={prevCard}>
           {"<"}
         </button>
@@ -75,6 +70,11 @@ const CardPage = () => {
       ) : (
         <p>No Cards to show</p>
       )}
+      {
+        data.viewDeck.createdBy === thisUser?.me?._id?
+        (<button id={styles['editDeck']} onClick={routeChange}>Edit Deck</button>)
+        : (<></>)
+      }
     </section>
 
   );

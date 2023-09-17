@@ -10,8 +10,6 @@ function Navbar() {
     applyBounceAnimation();
   }, []);
 
-  console.log(Auth.loggedIn());
-
   return (
     <div className="container-fluid">
       <nav className="navbar">
