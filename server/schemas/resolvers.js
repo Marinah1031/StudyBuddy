@@ -86,8 +86,8 @@ const resolvers = {
         throw new Error('Deck not found');
       }
     
-      console.log(deck.createdBy);
-      console.log(context.user._id);
+      // console.log(deck.createdBy);
+      // console.log(context.user._id);
       if (deck.createdBy.toString() !== context.user._id) {
         // If the deck's createdBy doesn't match the user's id, throw an error
         throw new Error(ownership);

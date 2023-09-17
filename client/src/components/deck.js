@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { EDIT_SINGLE_CARD, REMOVE_CARD } from '../utils/mutations';
 
-const DeckComponent = ({ term: initialTerm, definition: initialDefinition, cardId, deckId }) => {
+const DeckComponent = ({ term: initialTerm, definition: initialDefinition, cardId, deckId, createdBy }) => {
     const [term, setTerm] = useState(initialTerm);
     const [definition, setDefinition] = useState(initialDefinition);
 
@@ -25,8 +25,7 @@ const DeckComponent = ({ term: initialTerm, definition: initialDefinition, cardI
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
-        if (window.confirm("Are you sure you want to UPDATE this card?"))
+        if (window.confirm(`Are you sure you want to UPDATE this card?`))
         {
             try {
                 await editSingleCard({
