@@ -62,26 +62,30 @@ const DeckComponent = ({ term: initialTerm, definition: initialDefinition, cardI
 
     return (
         <div className="editCard">
-            <form onSubmit={handleSubmit}>
+            <form id='cardEditList' onSubmit={handleSubmit}>
                 <label>
                     <input
+                        className='termEdit'
                         type="text"
                         name="term"
                         value={term}
                         onChange={handleChange}
+                        cols="40" rows="5"
                     />
                 </label>
                 <label>
-                    <input
+                    <textarea
+                        className='definitionEdit'
                         type="text"
                         name="definition"
                         value={definition}
                         onChange={handleChange}
+                        cols="40" rows="5"
                     />
                 </label>
-                <input type="submit" value="Save" />                
+                <input className='saveEdit' type="submit" value="Save" />                
             </form>
-            <button onClick={deleteCard}>Delete</button>
+            <button id='delteCard' onClick={deleteCard}>Delete</button>
         </div>
     );
 }

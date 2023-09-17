@@ -51,25 +51,30 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+#cardEditList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: -55px;
+}
+
 .cardList {
   width: 80vw;
   display: flex;
-  align-items: 'center';
   flex-direction: column;
-}
-
-#createDeck {
-  position: fixed;
-  margin: 20px;
-  width: 150px;
-  right: 10px;
-  bottom: 50%;
+  align-items: center;
+  justify-content: center;
 }
 
 .editDeck, .editCard {
   margin: 5px;
   display: flex;
-  justify-content: center;
+}
+
+.editCard button {
+  margin-top: 36px;
+  margin-bottom: 36px;
 }
 
 .editDeck {
@@ -83,10 +88,33 @@ h1 {
   height: 30px;
 }
 
-#addCard, #finishEdit {
+.termEdit, .definitionEdit {
+  width: 150px;
+  height: 30px;
+}
+
+.termEdit {
+  margin: 10px;
+}
+
+.definitionEdit {
+  resize: none;
+  width: 300px;
+  height: 100px;
+  max-width: 300px;
+}
+
+.saveEdit {
+  height: 30px;
+  padding: 5px;
+  margin: 10px;
+}
+
+#addCard, #finishEdit, #createDeck {
   position: fixed;
   margin: 20px;
   width: 150px;
+  height: 30px;
 }
 
 #addCard {
@@ -97,6 +125,12 @@ h1 {
 #finishEdit {
   right: 10px;
   bottom: 10px;
+}
+
+#createDeck {
+  width: 150px;
+  right: 10px;
+  bottom: 50%;
 }
 
 .front {

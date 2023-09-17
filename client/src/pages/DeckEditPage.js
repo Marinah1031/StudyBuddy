@@ -76,7 +76,6 @@ const DeckEditPage = () => {
 
     return (
         <div className='cardList'>
-            
             <div className='editDeck'>
                 <h1>Title</h1>
                 <input

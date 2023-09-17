@@ -63,3 +63,8 @@
     background-image: linear-gradient(to right,   #3e929b, #006a72);
   }
   
+  #editDeck {
+    margin: 50px;
+    width: 100px;
+    height: 50px;
+  }
