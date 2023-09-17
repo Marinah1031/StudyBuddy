@@ -18,9 +18,12 @@ const MainPage = () => {
     <section className={styles['card-page']}>
       <div className={styles['card-nav']}>
       </div>
+      
       {decks.map((decks) => (
                 <Deck deckName={decks.deckName} description={decks.description} createdBy={decks.createdBy} deckId={decks._id} />
             ))}
+
+            
     </section>
   );
 };

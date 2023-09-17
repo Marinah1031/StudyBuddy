@@ -54,7 +54,7 @@ const CardPage = () => {
     <section className={styles['card-page']}>
       <div className={styles['card-nav']}>
     
-      <button id='finishEdit' onClick={routeChange}>Edit Deck</button>
+      <button id='' onClick={routeChange}>Edit Deck</button>
   
         <button className={styles['nav-button1']} onClick={prevCard}>
           {"<"}
