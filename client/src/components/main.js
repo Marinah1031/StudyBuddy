@@ -14,7 +14,6 @@ function Deck({ deckName, description, createdBy, deckId }) {
               <p className={styles['deck-name']}>{deckName}</p>
               <p className={styles['description']}>{description}</p>
               <p className={styles['created-by']}>Created by: {createdBy}</p>
-              <p className={styles['deck-id']}>Deck ID: {deckId}</p>
             </div>
           </Link>
         </button>
