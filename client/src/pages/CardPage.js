@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { FIND_SINGLE_DECK } from '../utils/querys';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import CardComponent from '../components/cards';
 import styles from './CardPage.module.css';
 
+
+
+
 const CardPage = () => {
   const { deckId } = useParams();
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const { loading, data } = useQuery(FIND_SINGLE_DECK, {
@@ -24,7 +28,9 @@ const CardPage = () => {
       prevIndex === 0 ? cards.length - 1 : prevIndex - 1
     );
   };
-
+  const routeChange = () => { 
+    navigate("./edit", { relative: "path"});
+}
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === 'ArrowLeft') {
@@ -44,8 +50,12 @@ const CardPage = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
+
     <section className={styles['card-page']}>
       <div className={styles['card-nav']}>
+    
+      <button id='' onClick={routeChange}>Edit Deck</button>
+  
         <button className={styles['nav-button1']} onClick={prevCard}>
           {"<"}
         </button>
@@ -60,10 +70,12 @@ const CardPage = () => {
           term={cards[currentIndex]?.term || ''}
           definition={cards[currentIndex]?.definition || ''}
         />
+        
       ) : (
         <p>No Cards to show</p>
       )}
     </section>
+
   );
 };
 
