@@ -20,7 +20,6 @@ function CardComponent({ term, definition, currentIndex, currentCard }) {
 
   return (
     <section style={{ display: currentIndex === currentCard ? '' : 'none' }}>
-      <Navbar />
       <button className={`card ${isFlipped ? 'flipped' : ''}`} onClick={handleClick}>
         <div className="card-inner front">
           <p>{term}</p>
