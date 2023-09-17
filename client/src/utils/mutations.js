@@ -96,3 +96,4 @@ export const ADD_CARD = gql`
     }
   }
 `;
+
