@@ -12,6 +12,7 @@ const MainPage = () => {
 
   const decks = data?.allDecks || [];
 
+  
   if (loading) return <p>Loading...</p>;
 
   return (
@@ -20,10 +21,14 @@ const MainPage = () => {
       </div>
       
       {decks.map((decks) => (
-                <Deck deckName={decks.deckName} description={decks.description} createdBy={decks.createdBy} deckId={decks._id} />
+                <Deck 
+                deckName={decks.deckName} 
+                description={decks.description} 
+                createdBy={decks.createdBy} 
+                deckId={decks._id} />
             ))}
 
-            
+
     </section>
   );
 };
