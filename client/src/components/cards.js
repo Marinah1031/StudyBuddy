@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import './cards.css';
 
-function CardComponent({ term, definition, currentIndex, currentCard }) {
+
+function CardComponent({ term, definition, currentIndex, currentCard, deckId}) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   // Add a useEffect to watch for changes in currentIndex
@@ -19,6 +20,7 @@ function CardComponent({ term, definition, currentIndex, currentCard }) {
   };
 
   return (
+   
     <section style={{ display: currentIndex === currentCard ? '' : 'none' }}>
       <Navbar />
       <button className={`card ${isFlipped ? 'flipped' : ''}`} onClick={handleClick}>
@@ -29,7 +31,9 @@ function CardComponent({ term, definition, currentIndex, currentCard }) {
           <p>{definition}</p>
         </div>
       </button>
+     
     </section>
+
   );
 }
 
