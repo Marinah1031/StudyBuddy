@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 function Deck({ deckName, description, createdBy, deckId }) {
   return (
     <section key={deckId}>
-      <Navbar />
       <div className={styles['deck-container']}>
         <button className={styles['deck-link']}>
           <Link to={`/saved/${deckId}`} className={styles['deck-link']}>

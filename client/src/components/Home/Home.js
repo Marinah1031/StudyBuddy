@@ -9,7 +9,6 @@ import "./Home.css"
 function Home() {
     return (
         <section>
-            <Navbar />
             <Container className="type-container-writer">
                 <Col md={12} className="text-center type-margin">
                     <div className="title-Study">Study For: </div>
