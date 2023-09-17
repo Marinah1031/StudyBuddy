@@ -5,6 +5,7 @@ import { ADD_CARD } from '../utils/mutations';
 import { useParams, useNavigate } from 'react-router-dom';
 import DeckComponent from '../components/deck';
 
+
 const DeckEditPage = () => {
     const { deckId } = useParams();
     const navigate = useNavigate();
@@ -42,11 +43,10 @@ const DeckEditPage = () => {
 
     const cards = data?.viewDeck?.cards || [];
 
-
     return (
         <div className='cardList'>
             {cards.map((card, index) => (
-                <DeckComponent key={index} term={card.term} definition={card.definition} deckId={deckId} cardId={card._id} />
+                <DeckComponent key={index} term={card.term} definition={card.definition} deckId={deckId} cardId={card._id} createdBy={data.viewDeck.createdBy} />
             ))}
             <button id='addCard' onClick={newCard}>Add New Card</button>
             <button id='finishEdit' onClick={routeChange}>Done Editing</button>
