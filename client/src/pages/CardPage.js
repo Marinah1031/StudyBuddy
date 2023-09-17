@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { FIND_SINGLE_DECK } from '../utils/querys';
+import { FIND_SINGLE_DECK, QUERY_ME } from '../utils/querys';
 import { useParams, useNavigate } from 'react-router-dom';
 import CardComponent from '../components/cards';
 import styles from './CardPage.module.css';
-
-
-
 
 const CardPage = () => {
   const { deckId } = useParams();
@@ -16,6 +13,7 @@ const CardPage = () => {
   const { loading, data } = useQuery(FIND_SINGLE_DECK, {
     variables: { deckId: deckId },
   });
+  const {data: thisUser} = useQuery(QUERY_ME);
 
   const cards = data?.viewDeck?.cards || [];
 
@@ -28,9 +26,11 @@ const CardPage = () => {
       prevIndex === 0 ? cards.length - 1 : prevIndex - 1
     );
   };
+  
   const routeChange = () => { 
     navigate("./edit", { relative: "path"});
-}
+  }
+
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === 'ArrowLeft') {
@@ -50,12 +50,13 @@ const CardPage = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
-
     <section className={styles['card-page']}>
       <div className={styles['card-nav']}>
-    
-      <button id='' onClick={routeChange}>Edit Deck</button>
-  
+        {
+          data.viewDeck.createdBy === thisUser?.me?._id?
+          (<button id='' onClick={routeChange}>Edit Deck</button>)
+          : (<></>)
+        }
         <button className={styles['nav-button1']} onClick={prevCard}>
           {"<"}
         </button>
