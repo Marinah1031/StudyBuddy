@@ -21,6 +21,9 @@ body {
   min-height: 100vh;
 }
 
+h1 {
+  text-align: center;
+}
 
   /* src/components/FlippingCard.css */
 .card {
@@ -55,10 +58,21 @@ body {
   flex-direction: column;
 }
 
-.editCard {
+.editDeck, .editCard {
   margin: 5px;
   display: flex;
   justify-content: center;
+}
+
+.editDeck {
+  flex-direction: column;
+  align-items: center;
+}
+
+.editDeck input {
+  text-align: center;
+  width: 300px;
+  height: 30px;
 }
 
 #addCard, #finishEdit {

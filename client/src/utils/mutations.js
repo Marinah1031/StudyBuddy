@@ -97,3 +97,12 @@ export const ADD_CARD = gql`
   }
 `;
 
+export const EDIT_DECK = gql`
+mutation EditDeck($deckId: ID!, $updatedDeckName: String!, $updatedDescription: String!) {
+  editDeck(deckId: $deckId, updatedDeckName: $updatedDeckName, updatedDescription: $updatedDescription) {
+    _id
+    deckName
+    description
+    createdBy
+  }
+}`;
