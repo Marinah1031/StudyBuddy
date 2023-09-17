@@ -75,4 +75,11 @@ query ViewUserDecks($userId: ID!) {
     description
   }
 }
-`
+`;
+
+export const GET_ONE_USER = gql`
+query GetUser($userId: ID!) {
+  getUser(userID: $userId) {
+    username
+  }
+}`;

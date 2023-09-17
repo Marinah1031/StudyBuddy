@@ -58,6 +58,14 @@ h1 {
   flex-direction: column;
 }
 
+#createDeck {
+  position: fixed;
+  margin: 20px;
+  width: 150px;
+  right: 10px;
+  bottom: 50%;
+}
+
 .editDeck, .editCard {
   margin: 5px;
   display: flex;

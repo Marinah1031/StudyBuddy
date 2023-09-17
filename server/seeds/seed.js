@@ -5,21 +5,6 @@ const cardsData = require('./cardsData.json');
 const deckData = require('./deckData.json');
 const userData = require('./userData.json');
 
-// const Deck = mongoose.model('Deck', new Schema({
-//   deckName: String,
-//   cards: [
-//     {
-//       type: mongoose.Schema.Types.ObjectId,
-//       ref: 'Card',
-//     },
-//   ],
-//   description: String,
-//   createdBy: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'User',
-//   },
-// }));
-
 const newCard = mongoose.model('Card', Card);
 
 async function seedDatabase() {

@@ -32,6 +32,7 @@ const resolvers = {
     allDecks: async () => Deck.find(),
     allUsers: async () => User.find(),
 
+    getUser: async (parent, { userID}) => User.findOne({ _id: userID }),
     viewDeck: async (parent, { deckID }) => Deck.findOne({ _id: deckID }),
     viewUserDecks: async (parent, { userID }) => Deck.find({ createdBy: userID }),
     getUserDecks: async (parent, args, context) => {

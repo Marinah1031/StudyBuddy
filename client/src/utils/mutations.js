@@ -106,3 +106,13 @@ mutation EditDeck($deckId: ID!, $updatedDeckName: String!, $updatedDescription: 
     createdBy
   }
 }`;
+
+export const CREATE_DECK = gql`
+mutation CreateDeck($deckName: String!, $description: String) {
+  createDeck(deckName: $deckName, description: $description) {
+    _id
+    deckName
+    description
+    createdBy
+  }
+}`;
