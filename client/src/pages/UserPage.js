@@ -9,14 +9,18 @@ import { CREATE_DECK, REMOVE_DECK } from '../utils/mutations'; // Import the REM
 const UserPage = () => {
   const navigate = useNavigate();
 
+  // Fetch the user's decks data using useQuery
   const { loading, data, refetch } = useQuery(GET_USER_DECKS);
   const [createDeck] = useMutation(CREATE_DECK);
   const [removeDeck] = useMutation(REMOVE_DECK); // Import the REMOVE_DECK mutation
 
+  // Extract the user's decks array from the fetched data, or initialize as an empty array
   const userDecks = data?.getUserDecks || [];
 
+  // Render loading state while data is being fetched
   if (loading) return <p>Loading...</p>;
 
+  // Function to create a new deck
   const newDeck = async () => {
     try {
       await createDeck({
@@ -33,6 +37,7 @@ const UserPage = () => {
     }
   };
 
+  // Function to handle deck removal
   const handleRemoveDeck = async (deckId) => {
     try {
       await removeDeck({
@@ -69,7 +74,7 @@ const UserPage = () => {
         ))}
       </div>
       <button className={styles['createdeck']} id='createDeck' onClick={newDeck}>
-              New Deck
+        New Deck
       </button>
     </section>
   );

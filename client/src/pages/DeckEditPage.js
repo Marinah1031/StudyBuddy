@@ -7,19 +7,25 @@ import DeckComponent from '../components/deck';
 import styles from './DeckEditPage.module.css';
 
 const DeckEditPage = () => {
+    // Get the deckId from the URL params
     const { deckId } = useParams();
     const navigate = useNavigate();
 
+    // Define mutation hooks for adding cards and editing the deck
     const [addCard] = useMutation(ADD_CARD);
     const [editDeck] = useMutation(EDIT_DECK);
+
+    // Fetch data for the selected deck using useQuery
     const { loading, data } = useQuery(FIND_SINGLE_DECK, {
         variables: { deckId: deckId }
     });
 
+    // Initialize state for deckName and description
     const [deckName, setDeckName] = useState(data?.viewDeck?.deckName || '');
     const [description, setDescription] = useState(data?.viewDeck?.description || '');
     const cards = data?.viewDeck?.cards || [];
-    
+
+    // Set deckName and description when data is loaded
     useEffect(() => {
         if (!loading && data) {
             setDeckName(data.viewDeck.deckName || '');
@@ -27,8 +33,7 @@ const DeckEditPage = () => {
         }
     }, [loading, data]);
 
-    if (loading) return <p>Loading...</p>;
-
+    // Function to handle route change
     const routeChange = () => { 
         editDeck({
             variables: {
@@ -41,6 +46,7 @@ const DeckEditPage = () => {
         navigate('..', { relative: 'path'});
     }
 
+    // Function to handle input changes
     const handleChange = (event) => {
         const { name, value } = event.target;
         switch (name) {
@@ -55,6 +61,7 @@ const DeckEditPage = () => {
         }
     };
 
+    // Function to add a new card to the deck
     const newCard = () => {
         window.scrollTo({
             top: document.documentElement.scrollHeight,
