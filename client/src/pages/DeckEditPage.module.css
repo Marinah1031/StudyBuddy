@@ -63,7 +63,7 @@
   }
 
 .card-button {
-    background-image: linear-gradient(to right, #62d4e0, #056970);
+    background-image: linear-gradient(to right, rgb(121, 247, 205), rgb(19, 224, 156));
     border: none;
     width: 45px;
     height: 50px;
@@ -76,6 +76,7 @@
 }
 
 .card-button:hover {
-    background-image: linear-gradient(to right, #3e929b, #006a72);
-    color: whitesmoke;
+    background-image: linear-gradient(to right, rgb(102, 201, 168), rgb(15, 182, 126));
+    color: black;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 }

@@ -20,8 +20,7 @@
     font-family: "Raleway", serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url("https://cdn.wallpapersafari.com/63/8/NPV4Ra.png");
-    background-size: cover;
+    background-image: linear-gradient(to bottom,   #dbdbdb, #a5d4d8);
     font-size: 30px;
     padding: 20px;
     width: 100%;
@@ -48,13 +47,13 @@
 }
 
 .title-card-inner-front {
-    padding-bottom: 370px;
     font-size: 50px;
     text-align: center;
+    padding-top: 150px;
 }
 
 .title-card-inner-back {
     font-size: 30px;
     text-align: center;
-    margin-top: 70px;
+    margin-top: 100px;
 }

@@ -78,19 +78,19 @@ h1 {
   font-family: "Raleway", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to right, #71bdc5, #009faa);
+  background-image: linear-gradient(to right, rgb(121, 247, 205), rgb(19, 224, 156));
   margin-top: 37px;
   margin-bottom: 37px;
   padding: 8px;
   border-radius: 8px;
   border: none;
   font-size: 15px;
-
 }
 
 .editCard button:hover {
-  background-image: linear-gradient(to right, #6aaeb6, #027a83);
-  color: white;
+  background-image: linear-gradient(to right, rgb(102, 201, 168), rgb(15, 182, 126));
+  color: black;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -123,6 +123,7 @@ h1 {
   font-family: "Raleway", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
@@ -145,6 +146,7 @@ h1 {
   font-family: "Raleway", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .definitionEdit:focus{
@@ -156,7 +158,7 @@ h1 {
   font-family: "Raleway", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to right, #71bdc5, #009faa);
+  background-image: linear-gradient(to right, rgb(121, 247, 205), rgb(19, 224, 156));
   margin-top: 37px;
   margin-bottom: 37px;
   padding: 8px;
@@ -168,8 +170,9 @@ h1 {
 }
 
 .saveEdit:hover {
-  background-image: linear-gradient(to right, #6aaeb6, #027a83);
-  color: white;
+  background-image: linear-gradient(to right, rgb(102, 201, 168), rgb(15, 182, 126));
+  color: black;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 
 }
 
