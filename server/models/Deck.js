@@ -33,7 +33,3 @@ const Deck = mongoose.model('Deck', deckSchema);
 
 module.exports = Deck;
 
-
-// const cardCount = myDeck.cardCount;
-// console.log(`The deck "${myDeck.name}" contains ${cardCount} cards.`);
-
