@@ -5,12 +5,12 @@ const { Schema } = mongoose;
 // Define the schema for a 'card' document in the MongoDB collection.
 const cardSchema = new Schema({
 
-   // 'term' field representing the term or question on the card.
+  // 'term' field representing the term or question on the card.
   term: {
     type: String,
     default: "",
   },
-    // 'definition' field representing the definition or answer on the card.
+  // 'definition' field representing the definition or answer on the card.
   definition: {
     type: String,
     default: "",

@@ -14,28 +14,29 @@ const userSchema = new Schema({
   },
   // 'email' field representing the user's email address.
   email: {
-    type :String ,
-    unique:true,
+    type: String,
+    unique: true,
     required: true
   },
+  // 'password' field representing the user's hashed password.
   password: {
     type: String,
     required: true,
   },
-  });
+});
 
-  userSchema.pre('save', async function (next) {
-    if (this.isNew || this.isModified('password')) {
-      const saltRounds = 10;
-      this.password = await bcrypt.hash(this.password, saltRounds);
-    }
-  
-    next();
-  });
-  //   comparePassword method to check for a valid password entered by the user on login page
-  userSchema.methods.isCorrectPassword = async function (password) {
-    return await bcrypt.compare(password, this.password);
-  };
+userSchema.pre('save', async function (next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+//   comparePassword method to check for a valid password entered by the user on login page
+userSchema.methods.isCorrectPassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
 
 const User = mongoose.model('User', userSchema);
 

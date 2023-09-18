@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 
 // Define the schema for a 'deck' document in the MongoDB collection.
 const deckSchema = new Schema({
-   // 'deckName' field representing the name of the deck.
+  // 'deckName' field representing the name of the deck.
   deckName: {
     type: String,
     required: true,
@@ -17,13 +17,13 @@ const deckSchema = new Schema({
     default: '',
     required: true,
   },
-    // 'createdBy' field representing the user who created the deck.
+  // 'createdBy' field representing the user who created the deck.
   createdBy: {
     type: Schema.Types.ObjectId,
     ref: User,
     required: true,
   },
-   // 'cards' field representing an array of cards associated with the deck.
+  // 'cards' field representing an array of cards associated with the deck.
   cards: [Card]
 });
 
