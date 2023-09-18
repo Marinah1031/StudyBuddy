@@ -1,0 +1,42 @@
+/* Contact.module.scss */
+
+.contact-section {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-card {
+  background-image: linear-gradient(to right, #5fb2bb, #029aa5);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 500px;
+  transition: opacity 0.3s ease;
+  opacity: 0.8; /* Use 0.8 for 80% opacity */
+  color: whitesmoke;
+  margin: 50px;
+  opacity: 0.9; /* Use 0.8 for 80% opacity */
+}
+
+.contact-input {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+}
+
+.contact-input:focus {
+  border: none;
+}
+
+.email-sent-message {
+  color: green;
+  opacity: 0.8; /* Use 0.8 for 80% opacity */
+}

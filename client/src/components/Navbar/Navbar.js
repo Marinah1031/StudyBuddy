@@ -23,12 +23,12 @@ function Navbar() {
                 <li><a id="len4" className="hoverable" href="/" onClick={() => Auth.logout()}>
               Logout
             </a></li>
-                <li><Link id="len5" className="hoverable" to="/Contact">Contact</Link></li>
               </>
             ) : (
               <li><Link id="len2" className="hoverable" to="/login">Login/Signup</Link></li>
             )}
             <li><Link id="len3" className="hoverable" to="/supportUs">Support Us</Link></li>
+            <li><Link id="len4" className="hoverable" to="/Contact">Contact Us</Link></li>
           </ul>
         </div>
       </nav>
