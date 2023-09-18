@@ -51,32 +51,32 @@ const CardPage = () => {
 
   return (
     <section className={styles['card-page']}>
-      <div className={styles['card-nav']}>
-        <button className={styles['nav-button1']} onClick={prevCard}>
-          {"<"}
-        </button>
-        <button className={styles['nav-button2']} onClick={nextCard}>
-          {">"}
-        </button>
+      <div className={styles['card-container']}>
+        {cards.length > 0 ? (
+          <CardComponent
+            currentIndex={currentIndex}
+            currentCard={currentIndex}
+            term={cards[currentIndex]?.term || ''}
+            definition={cards[currentIndex]?.definition || ''}
+          />
+        ) : (
+          <p>No Cards to show</p>
+        )}
+        <div className={styles['card-nav-buttons']}>
+          <button className={styles['nav-button1']} onClick={prevCard}>
+            {"<"}
+          </button>
+          <button className={styles['nav-button2']} onClick={nextCard}>
+            {">"}
+          </button>
+        </div>
       </div>
-      {cards.length > 0 ? (
-        <CardComponent
-          currentIndex={currentIndex}
-          currentCard={currentIndex}
-          term={cards[currentIndex]?.term || ''}
-          definition={cards[currentIndex]?.definition || ''}
-        />
-        
-      ) : (
-        <p>No Cards to show</p>
-      )}
       {
-        data.viewDeck.createdBy === thisUser?.me?._id?
+        data.viewDeck.createdBy === thisUser?.me?._id ?
         (<button id={styles['editDeck']} onClick={routeChange}>Edit Deck</button>)
         : (<></>)
       }
     </section>
-
   );
 };
 

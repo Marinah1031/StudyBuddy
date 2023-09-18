@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import styles from './CardPage.module.css';
 import Deck from '../components/main';
 import { GET_USER_DECKS } from '../utils/querys';
-import { CREATE_DECK } from '../utils/mutations';
+import { CREATE_DECK, REMOVE_DECK } from '../utils/mutations'; // Import the REMOVE_DECK mutation
 
 const UserPage = () => {
   const navigate = useNavigate();
 
-  const { loading, data } = useQuery(GET_USER_DECKS);
+  const { loading, data, refetch } = useQuery(GET_USER_DECKS);
   const [createDeck] = useMutation(CREATE_DECK);
+  const [removeDeck] = useMutation(REMOVE_DECK); // Import the REMOVE_DECK mutation
 
   const userDecks = data?.getUserDecks || [];
 
@@ -30,25 +31,46 @@ const UserPage = () => {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
+
+  const handleRemoveDeck = async (deckId) => {
+    try {
+      await removeDeck({
+        variables: {
+          deckId,
+        },
+      });
+      // After removing a deck, refetch the user decks to update the UI
+      refetch();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <section className={styles['card-page']}>
       <h1>Your Decks</h1>
-      <h1>{ }</h1>
       <div className={styles['card-nav']}>
+        {userDecks.map((deck, index) => (
+          <div key={index} className={styles['deck-container']}>
+            <Deck
+              deckName={deck.deckName}
+              description={deck.description}
+              createdBy={deck.createdBy}
+              deckId={deck._id}
+            />
+            <button
+              className={styles['remove-deck']}
+              onClick={() => handleRemoveDeck(deck._id)}
+            >
+              Remove Deck
+            </button>
+          </div>
+        ))}
       </div>
-      {userDecks.map((decks, index) => (
-        <Deck
-          key={index}
-          deckName={decks.deckName}
-          description={decks.description}
-          createdBy={decks.createdBy}
-          deckId={decks._id} />
-      ))}
-      <div className='newdeckdiv'>
-        <button className={styles['createdeck']} id='createDeck' onClick={newDeck}>NewDeck</button>
-      </div>
+      <button className={styles['createdeck']} id='createDeck' onClick={newDeck}>
+              New Deck
+      </button>
     </section>
   );
 };
