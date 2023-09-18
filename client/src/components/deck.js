@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { EDIT_SINGLE_CARD, REMOVE_CARD } from '../utils/mutations';
 
-const DeckComponent = ({ term: initialTerm, definition: initialDefinition, cardId, deckId }) => {
+const DeckComponent = ({ term: initialTerm, definition: initialDefinition, cardId, deckId, createdBy }) => {
     const [term, setTerm] = useState(initialTerm);
     const [definition, setDefinition] = useState(initialDefinition);
 
@@ -25,8 +25,7 @@ const DeckComponent = ({ term: initialTerm, definition: initialDefinition, cardI
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
-        if (window.confirm("Are you sure you want to UPDATE this card?"))
+        if (window.confirm(`Are you sure you want to UPDATE this card?`))
         {
             try {
                 await editSingleCard({
@@ -63,26 +62,30 @@ const DeckComponent = ({ term: initialTerm, definition: initialDefinition, cardI
 
     return (
         <div className="editCard">
-            <form onSubmit={handleSubmit}>
+            <form id='cardEditList' onSubmit={handleSubmit}>
                 <label>
                     <input
+                        className='termEdit'
                         type="text"
                         name="term"
                         value={term}
                         onChange={handleChange}
+                        cols="40" rows="5"
                     />
                 </label>
                 <label>
-                    <input
+                    <textarea
+                        className='definitionEdit'
                         type="text"
                         name="definition"
                         value={definition}
                         onChange={handleChange}
+                        cols="40" rows="5"
                     />
                 </label>
-                <input type="submit" value="Save" />                
+                <input className='saveEdit' type="submit" value="Save" />                
             </form>
-            <button onClick={deleteCard}>Delete</button>
+            <button id='delteCard' onClick={deleteCard}>Delete</button>
         </div>
     );
 }

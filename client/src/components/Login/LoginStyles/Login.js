@@ -108,7 +108,6 @@ function Login(props) {
                 <input
                   type='username'
                   name='username'
-                  id='username'
                   onChange={signupHandleChange}
                   required
                 />
@@ -118,7 +117,6 @@ function Login(props) {
                 <input
                   type='email'
                   name='email'
-                  id='email'
                   onChange={signupHandleChange}
                   required
                 />
@@ -128,7 +126,6 @@ function Login(props) {
                 <input
                   type='password'
                   name='password'
-                  id='password'
                   onChange={signupHandleChange}
                   required
                 />
@@ -140,7 +137,7 @@ function Login(props) {
               <div className='sign-link'>
                 <p>
                   Already have an account?{" "}
-                  <a className='signIn-link'>Sign In</a>
+                  <a href='#login' className='signIn-link'>Sign In</a>
                 </p>
               </div>
             </form>
@@ -153,7 +150,6 @@ function Login(props) {
                 <input
                   type='email'
                   name='email'
-                  id='email'
                   onChange={loginHandleChange}
                   required
                 />
@@ -163,14 +159,13 @@ function Login(props) {
                 <input
                   type='password'
                   name='password'
-                  id='password'
                   onChange={loginHandleChange}
                   required
                 />
                 <label htmlFor='password'>Password</label>
               </div>
               <div className='forgot-pass'>
-                <a href='#'>Forgot Password?</a>
+                <a href='#login'>Forgot Password?</a>
               </div>
               {error ? (
                 <div>
@@ -184,7 +179,7 @@ function Login(props) {
               </button>
               <div className='sign-link'>
                 <p>
-                  Don't have an account? <a className='signUp-link'>Sign Up</a>
+                  Don't have an account? <a href='#signup' className='signUp-link'>Sign Up</a>
                 </p>
               </div>
             </form>
