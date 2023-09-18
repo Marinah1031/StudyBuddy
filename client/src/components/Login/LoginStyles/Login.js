@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import Navbar from "../../Navbar/Navbar";
-import "./Login.css";
+import "./Login.css"; // Import CSS styles
 import { useMutation } from "@apollo/client";
-import { LOGIN_USER, ADD_USER } from "../../../utils/mutations";
-import Auth from "../../../utils/auth";
+import { LOGIN_USER, ADD_USER } from "../../../utils/mutations"; // Import GraphQL mutations
+import Auth from "../../../utils/auth"; // Import authentication utility
 
 function Login(props) {
   useEffect(() => {
+    // Functions to handle sign-up and sign-in animations
     const handleSignUpClick = () => {
-      // event.preventDefault();
-
       const wrapper = document.querySelector(".wrapper");
       wrapper.classList.add("animate-signIn");
       wrapper.classList.remove("animate-signUp");
     };
     const handleSignInClick = () => {
-      // event.preventDefault();
       const wrapper = document.querySelector(".wrapper");
       wrapper.classList.add("animate-signUp");
       wrapper.classList.remove("animate-signIn");
     };
 
+    // Event listeners for sign-up and sign-in links
     const signUpLink = document.querySelector(".signUp-link");
     const signInLink = document.querySelector(".signIn-link");
 
@@ -35,7 +34,7 @@ function Login(props) {
     };
   }, []);
 
-  //code for handling the login form
+  // Code for handling the login form
   const [loginFormState, setLoginFormState] = useState({
     email: "",
     password: "",
@@ -53,7 +52,6 @@ function Login(props) {
   const handleSignInSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log(loginFormState);
       const loginResponse = await login({
         variables: {
           email: loginFormState.email,
@@ -67,7 +65,7 @@ function Login(props) {
     }
   };
 
-  //code for handling the signin form
+  // Code for handling the sign-up form
   const [signupFormState, setSignupFormState] = useState({
     username: "",
     email: "",
@@ -98,9 +96,9 @@ function Login(props) {
 
   return (
     <section>
- 
       <Container className='type-container'>
         <div className='wrapper'>
+          {/* Sign-up form */}
           <div className='form-wrapper sign-up'>
             <form onSubmit={handleSignupSubmit}>
               <h2>Sign Up</h2>
@@ -108,7 +106,6 @@ function Login(props) {
                 <input
                   type='username'
                   name='username'
-                  id='username'
                   onChange={signupHandleChange}
                   required
                 />
@@ -118,7 +115,6 @@ function Login(props) {
                 <input
                   type='email'
                   name='email'
-                  id='email'
                   onChange={signupHandleChange}
                   required
                 />
@@ -128,7 +124,6 @@ function Login(props) {
                 <input
                   type='password'
                   name='password'
-                  id='password'
                   onChange={signupHandleChange}
                   required
                 />
@@ -140,12 +135,15 @@ function Login(props) {
               <div className='sign-link'>
                 <p>
                   Already have an account?{" "}
-                  <a className='signIn-link'>Sign In</a>
+                  <a href='#login' className='signIn-link'>
+                    Sign In
+                  </a>
                 </p>
               </div>
             </form>
           </div>
 
+          {/* Sign-in form */}
           <div className='form-wrapper sign-in'>
             <form onSubmit={handleSignInSubmit}>
               <h2>Login</h2>
@@ -153,7 +151,6 @@ function Login(props) {
                 <input
                   type='email'
                   name='email'
-                  id='email'
                   onChange={loginHandleChange}
                   required
                 />
@@ -163,15 +160,15 @@ function Login(props) {
                 <input
                   type='password'
                   name='password'
-                  id='password'
                   onChange={loginHandleChange}
                   required
                 />
                 <label htmlFor='password'>Password</label>
               </div>
               <div className='forgot-pass'>
-                <a href='#'>Forgot Password?</a>
+                <a href='#login'>Forgot Password?</a>
               </div>
+              {/* Display error message if login fails */}
               {error ? (
                 <div>
                   <p className='error-text'>
@@ -184,7 +181,10 @@ function Login(props) {
               </button>
               <div className='sign-link'>
                 <p>
-                  Don't have an account? <a className='signUp-link'>Sign Up</a>
+                  Don't have an account?{" "}
+                  <a href='#signup' className='signUp-link'>
+                    Sign Up
+                  </a>
                 </p>
               </div>
             </form>
