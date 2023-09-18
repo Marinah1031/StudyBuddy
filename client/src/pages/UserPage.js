@@ -47,7 +47,7 @@ const UserPage = () => {
           deckId={decks._id} />
       ))}
       <div className='newdeckdiv'>
-        <button className={styles['createdeck']} id='createDeck' onClick={newDeck}>New Deck</button>
+        <button className={styles['createdeck']} id='createDeck' onClick={newDeck}>NewDeck</button>
       </div>
     </section>
   );
