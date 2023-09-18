@@ -17,6 +17,7 @@ import Login from './components/Login/LoginStyles/Login'
 import MainPage from './pages/MainPage';
 import UserPage from './pages/UserPage';
 import PaypalHomePage from './PaypalHomePage';
+import Contact from './components/Contact/Contact'
 
 
 const httpLink = createHttpLink({
@@ -69,6 +70,7 @@ function App() {
             />
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/Contact' element={<Contact />}/>
           </Routes>
 
         </>
