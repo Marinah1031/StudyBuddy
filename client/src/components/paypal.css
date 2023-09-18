@@ -1,0 +1,15 @@
+.paypal-div{
+    background-image: linear-gradient(to right,   #3aebff, #09818a);
+    padding: 20px;
+    border-radius: 20px;
+}
+.paypalValue{
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+}

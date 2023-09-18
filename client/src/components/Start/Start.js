@@ -1,13 +1,12 @@
-// Start.js
-
 import React from "react";
-import "./Start.css"; // Import CSS file
-import Auth from "../../utils/auth";
+import "./Start.css"; // Import CSS styles
+import Auth from "../../utils/auth"; // Import authentication utility
 
 function Start() {
     return (
         <div id="start-wrapper">
             <div id="start-link_wrapper">
+                {/* Conditional rendering of the "Study Now!" link based on user authentication */}
                 {
                     Auth.loggedIn() ? (
                         <a className="hove" href="/main">Study Now!</a>

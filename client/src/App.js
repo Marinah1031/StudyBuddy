@@ -1,6 +1,4 @@
 import React from 'react';
-
-
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import {
   ApolloClient,
@@ -17,6 +15,7 @@ import Login from './components/Login/LoginStyles/Login'
 import MainPage from './pages/MainPage';
 import UserPage from './pages/UserPage';
 import PaypalHomePage from './PaypalHomePage';
+import Contact from './components/Contact/Contact'
 
 
 const httpLink = createHttpLink({
@@ -42,6 +41,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      
       <Router>
         <>
           <Navbar />
@@ -69,6 +69,7 @@ function App() {
             />
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/Contact' element={<Contact />}/>
           </Routes>
 
         </>

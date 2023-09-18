@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 
 * {
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif !important;
@@ -177,12 +176,18 @@ h1 {
 }
 
 #addCard,
-#finishEdit,
-#createDeck {
+#finishEdit {
   position: fixed;
   margin: 20px;
   width: 150px;
   height: 30px;
+}
+
+#createDeck {
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
 }
 
 #addCard {
@@ -193,12 +198,6 @@ h1 {
 #finishEdit {
   right: 10px;
   bottom: 10px;
-}
-
-#createDeck {
-  width: 150px;
-  right: 10px;
-  bottom: 50%;
 }
 
 .front {

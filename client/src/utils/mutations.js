@@ -116,3 +116,24 @@ mutation CreateDeck($deckName: String!, $description: String) {
     createdBy
   }
 }`;
+
+export const REMOVE_DECK = gql`
+  mutation RemoveDeck($deckId: ID!) {
+    removeDeck(deckId: $deckId) {
+      _id
+      deckName
+      description
+      createdBy
+      cards {
+        _id
+        term
+        definition
+      }
+    }
+  }
+`;
+
+
+
+
+
