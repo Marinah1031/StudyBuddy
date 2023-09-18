@@ -16,6 +16,8 @@ import Home from './components/Home/Home.js';
 import Login from './components/Login/LoginStyles/Login'
 import MainPage from './pages/MainPage';
 import UserPage from './pages/UserPage';
+import PaypalHomePage from './PaypalHomePage';
+
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -37,41 +39,41 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-  function App() {
-      return (
-        <ApolloProvider client={client}>
-          <Router>
-            <>
-              <Navbar />
-              <Routes>
-                <Route
-                  path="/saved/:deckId/edit"
-                  element={<DeckEdit/>}
-                />
-                <Route
-                  path="/saved/:deckId"
-                  element={<CardPage/>}
-                />
-                    <Route
-                  path="/main"
-                  element={<MainPage/>}
-                />
-                    <Route
-                  path="/userPage"
-                  element={<UserPage/>}
-                />
-                <Route
-                  path='*'
-                  element={<h1 className="display-2">Wrong page!</h1>}
-                />
-                <Route path='/' element={<Home/>}/>
-                <Route path='/login' element={<Login/>}/>
-              </Routes>
-              
-            </>
-          </Router>
-        </ApolloProvider>
-      );
-    }
+function App() {
+  return (
+    <ApolloProvider client={client}>
+      <Router>
+        <>
+          <Navbar />
+          <Routes>
+            <Route
+              path="/saved/:deckId/edit"
+              element={<DeckEdit />}
+            />
+            <Route
+              path="/saved/:deckId"
+              element={<CardPage />}
+            />
+            <Route
+              path="/main"
+              element={<MainPage />}
+            />
+            <Route
+              path="/userPage"
+              element={<UserPage />}
+            />
+            <Route path='/supportUs' element={<PaypalHomePage />} />
+            <Route
+              path='*'
+              element={<h1 className="display-2">Wrong page!</h1>}
+            />
+            <Route path='/' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
+
+        </>
+      </Router>
+    </ApolloProvider>
+  );
+}
 export default App;
-  
