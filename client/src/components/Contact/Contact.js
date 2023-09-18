@@ -4,34 +4,45 @@ import emailjs from "emailjs-com";
 import styles from "./Contact.module.scss"; // Import styles using CSS modules
 
 function Contact() {
+  // State to manage form input values
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  // State to track whether the email has been sent
   const [isEmailSent, setIsEmailSent] = useState(false);
+  
+  // State to track whether the form is incomplete
   const [isFormIncomplete, setIsFormIncomplete] = useState(true);
 
   useEffect(() => {
+    // Check if any of the form fields are empty
     const { name, email, message } = formValues;
     setIsFormIncomplete(!name || !email || !message);
   }, [formValues]);
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Initialize email.js with your public key
     const publicKey = "dODbK528Zdw0AO8BZ";
     emailjs.init(publicKey);
 
+    // Specify the service and template IDs for sending the email
     const serviceID = "service_8u6ry8w";
     const templateID = "template_ayv6gyi";
 
+    // Send the form data using email.js
     emailjs
       .sendForm(serviceID, templateID, e.target)
       .then((result) => {
         console.log("Email sent successfully:", result.text);
         setIsEmailSent(true);
+        
+        // Clear the form fields after successful submission
         setFormValues({
           name: "",
           email: "",
@@ -43,6 +54,7 @@ function Contact() {
       });
   };
 
+  // Handle input changes and update formValues state
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormValues((prevValues) => ({
