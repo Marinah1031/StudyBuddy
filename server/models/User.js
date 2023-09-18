@@ -1,14 +1,18 @@
+// Import the Mongoose library and other dependencies.
 const mongoose = require('mongoose');
 
 const bcrypt = require('bcrypt');
 const { Schema } = mongoose;
 
+// Define the schema for a 'user' document in the MongoDB collection.
 const userSchema = new Schema({
+  // 'username' field representing the user's username.
   username: {
     type: String,
     unique: true,
     required: true,
   },
+  // 'email' field representing the user's email address.
   email: {
     type :String ,
     unique:true,

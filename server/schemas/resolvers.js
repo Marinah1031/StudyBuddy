@@ -85,9 +85,11 @@ const resolvers = {
 
         return newDeck;
       }
+       // If there's no user in the context, throw an error with a message
       throw new AuthenticationError("context.user._id");
     },
     removeDeck: async (parent, { deckId }, context) => {
+       // Find the deck by ID
       const deck = await Deck.findOne({ _id: deckId });
 
       if (!deck) {
