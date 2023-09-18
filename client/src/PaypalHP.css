@@ -1,0 +1,18 @@
+.Paypal{
+    width: 500px;
+    height: 500px;
+}
+
+.checkoutButton{
+    font-family: "Raleway", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to right, #71bdc5, #009faa);
+    margin-top: 37px;
+    margin-bottom: 37px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+  
+}

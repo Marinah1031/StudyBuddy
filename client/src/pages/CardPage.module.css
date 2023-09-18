@@ -33,6 +33,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-right: 550px;
+    margin-bottom: 100px;
   }
 
   .nav-button2 {
@@ -64,7 +65,44 @@
   }
   
   #editDeck {
+    font-family: "Raleway", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     margin: 50px;
-    width: 100px;
+    width: 450px;
     height: 50px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right,   #87c8cf, #04868f);
+    border: none;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+  }
+
+  #editDeck:hover{
+    font-family: "Raleway", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to right,   #3e929b, #006a72);
+    color: whitesmoke;
+  }
+
+  .createdeck {
+    font-family: "Raleway", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to right, #62d4e0, #056970);
+    border: none;
+    width: 45px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+  }
+  .createdeck:hover {
+    font-family: "Raleway", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to right, #3e929b, #006a72);
+    color: white;
   }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar/Navbar';
 import './cards.css';
 
 
@@ -24,10 +23,10 @@ function CardComponent({ term, definition, currentIndex, currentCard, deckId}) {
     <section style={{ display: currentIndex === currentCard ? '' : 'none' }}>
       <button className={`card ${isFlipped ? 'flipped' : ''}`} onClick={handleClick}>
         <div className="card-inner front">
-          <p>{term}</p>
+          <p className='title-card-inner-front'>{term}</p>
         </div>
         <div className="card-inner back">
-          <p>{definition}</p>
+          <p className='title-card-inner-back'>{definition}</p>
         </div>
       </button>
      

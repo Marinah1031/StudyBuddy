@@ -4,7 +4,7 @@ import { FIND_SINGLE_DECK } from '../utils/querys';
 import { ADD_CARD, EDIT_DECK } from '../utils/mutations';
 import { useParams, useNavigate } from 'react-router-dom';
 import DeckComponent from '../components/deck';
-
+import styles from './DeckEditPage.module.css';
 
 const DeckEditPage = () => {
     const { deckId } = useParams();
@@ -75,8 +75,8 @@ const DeckEditPage = () => {
     }
 
     return (
-        <div className='cardList'>
-            <div className='editDeck'>
+        <div className={styles['card-list']}>
+            <div className={styles['edit-deck']}>
                 <h1>Title</h1>
                 <input
                     type='text'
@@ -84,6 +84,7 @@ const DeckEditPage = () => {
                     name='deckName'
                     value={deckName}
                     onChange={handleChange}
+                    className={styles['card-input']}
                 />
 
                 <h2>Description</h2>
@@ -93,14 +94,15 @@ const DeckEditPage = () => {
                     name='description'
                     value={description}
                     onChange={handleChange}
+                    className={styles['card-input']}
                 />     
             </div>
             <h2>Cards</h2>
             {cards.map((card, index) => (
                 <DeckComponent key={index} term={card.term} definition={card.definition} deckId={deckId} cardId={card._id} createdBy={data.viewDeck.createdBy} />
             ))}
-            <button id='addCard' onClick={newCard}>Add New Card</button>
-            <button id='finishEdit' onClick={routeChange}>Done Editing</button>
+            <button id='addCard' onClick={newCard} className={styles['card-button']}>Add New Card</button>
+            <button id='finishEdit' onClick={routeChange} className={styles['card-button']}>Done Editing</button>
         </div>
     );
 }
