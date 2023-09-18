@@ -25,7 +25,7 @@ const UserPage = () => {
         },
       }).then((response) => {
         const newPath = response.data.createDeck._id;
-        navigate(`../saved/${newPath}/edit`, { relative: 'path'});
+        navigate(`../saved/${newPath}/edit`, { relative: 'path' });
       });
     } catch (error) {
       console.error(error);
@@ -34,19 +34,21 @@ const UserPage = () => {
 
   return (
     <section className={styles['card-page']}>
-      <button id='createDeck' onClick={newDeck}>NewDeck</button>
       <h1>Your Decks</h1>
-      <h1>{}</h1>
+      <h1>{ }</h1>
       <div className={styles['card-nav']}>
       </div>
       {userDecks.map((decks, index) => (
-                <Deck
-                key={index}
-                deckName={decks.deckName} 
-                description={decks.description} 
-                createdBy={decks.createdBy} 
-                deckId={decks._id} />
-            ))}
+        <Deck
+          key={index}
+          deckName={decks.deckName}
+          description={decks.description}
+          createdBy={decks.createdBy}
+          deckId={decks._id} />
+      ))}
+      <div className='newdeckdiv'>
+        <button className={styles['createdeck']} id='createDeck' onClick={newDeck}>New Deck</button>
+      </div>
     </section>
   );
 };
