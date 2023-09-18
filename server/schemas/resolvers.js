@@ -87,6 +87,8 @@ const resolvers = {
         throw new Error('Deck not found');
       }
     
+      // console.log(deck.createdBy);
+      // console.log(context.user._id);
       if (deck.createdBy.toString() !== context.user._id) {
         // If the deck's createdBy doesn't match the user's id, throw an error
         throw new Error(ownership);
@@ -164,10 +166,11 @@ const resolvers = {
         { new: true }
       );
 
+      // console.log(updatedDeck.cards === deck.cards);
       // Handle case where Card is not found in the deck
-      if (updatedDeck.cards === deck.cards) {
-        throw new Error('Card not found in the deck');
-      }
+      // if (updatedDeck.cards === deck.cards) {
+      //   throw new Error('Card not found in the deck');
+      // }
 
       return updatedDeckInfo;
     },
@@ -181,9 +184,9 @@ const resolvers = {
       }
 
       // If the deck's createdBy doesn't match the user's id, throw an error
-      if (deck.createdBy.toString() !== context.user._id) {
-        throw new Error(ownership);
-      }
+      // if (deck.createdBy.toString() !== context.user._id) {
+      //   throw new Error(ownership);
+      // }
 
       // Remove the card from the deck
       const updatedDeck = await Deck.findOneAndUpdate(
@@ -197,10 +200,11 @@ const resolvers = {
         { new: true }
       );
 
+      // console.log(updatedDeck.cards === deck.cards);
       // Handle case where Card is not found in the deck
-      if (updatedDeck.cards === deck.cards) {
-        throw new Error('Card not found in the deck');
-      }
+      // if (updatedDeck.cards === deck.cards) {
+      //   throw new Error('Card not found in the deck');
+      // }
 
       return updatedDeck;
     }
