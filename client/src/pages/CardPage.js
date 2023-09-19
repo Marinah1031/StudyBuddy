@@ -59,9 +59,12 @@ const CardPage = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
+     // This is a JSX section element with a CSS class 'card-page'.
     <section className={styles['card-page']}>
       <div className={styles['card-container']}>
+         {/* Conditional rendering: Check if there are cards in the 'cards' array */}
         {cards.length > 0 ? (
+           // If there are cards, render the 'CardComponent' with the current card's data
           <CardComponent
             currentIndex={currentIndex}
             currentCard={currentIndex}
@@ -69,12 +72,16 @@ const CardPage = () => {
             definition={cards[currentIndex]?.definition || ''}
           />
         ) : (
+          // If there are no cards, display a message
           <p>No Cards to show</p>
         )}
+          {/* This is a container for navigation buttons */}
         <div className={styles['card-nav-buttons']}>
+           {/* Button to navigate to the previous card */}
           <button className={styles['nav-button1']} onClick={prevCard}>
             {"<"}
           </button>
+            {/* Button to navigate to the next card */}
           <button className={styles['nav-button2']} onClick={nextCard}>
             {">"}
           </button>
