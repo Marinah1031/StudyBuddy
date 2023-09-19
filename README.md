@@ -16,12 +16,16 @@ This is a full stack webapp that allows users to create and share flashcards. It
 
 ## Usage
 
-This is the [url](https://github.com/Marinah1031/StudyBuddy) for the homepage. To use this application, you would first need to log in or create a user account by either clicking on the “study now” button at the center of the page, or go to “login/signup” in the navbar at top of the page. Once logged in, you will be taken automatically to the main page where you can see all the flash card decks created by all users. Clicking on the deck will allow you to view the cards that are inside the deck. Each card will have a “term” side and “definition” side, and clicking on the card will allow you to “flip” the card. Right and left arrow key will allow you to navigate through the cards. If you are the creator the deck, you can click on the “edit cards” button below the card to edit the cards inside the deck.
+This is the [url]([https://github.com/Marinah1031/StudyBuddy](https://study-buddy-p3-0d14fa2a37d6.herokuapp.com/)) for the homepage. To use this application, you would first need to log in or create a user account by either clicking on the “study now” button at the center of the page, or go to “login/signup” in the navbar at top of the page. Once logged in, you will be taken automatically to the main page where you can see all the flash card decks created by all users. Clicking on the deck will allow you to view the cards that are inside the deck. Each card will have a “term” side and “definition” side, and clicking on the card will allow you to “flip” the card. Right and left arrow key will allow you to navigate through the cards. If you are the creator the deck, you can click on the “edit cards” button below the card to edit the cards inside the deck.
 Clicking on “User Page” on navbar will allow you to see the list of decks you made. Clicking on “Create New Card set” button will allow you to create a new deck of cards.
 “Logout” button on navbar will allow you to logout, returning you to homepage.
 
-![main page]()
-![card page]()
+![studyBuddy main page with all decks](https://github.com/Marinah1031/StudyBuddy/assets/126653060/096ad632-eaec-4463-8565-b113cf4c2b25)
+
+![Card page to display card term](https://github.com/Marinah1031/StudyBuddy/assets/126653060/f461f307-7746-4315-8be5-fa2954c49e0b)
+
+![Deck editing page](https://github.com/Marinah1031/StudyBuddy/assets/126653060/1d0510cd-e210-46fe-ac34-4efb51821bbf)
+
 
 ## License
   
